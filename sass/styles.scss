@@ -1,0 +1,326 @@
+$sidebar-row-height: 100px;
+$sidebar-image-height:150px;
+$sidebar-image-width:200px;
+$header-height:120px;
+$footer-height:40px;
+
+.mySlides {
+    display:none;
+}
+
+#slide-show {
+    width: 70%;
+    margin-left: 15%;
+    position: relative;
+    .mySlides {
+        position: absolute;
+        width: 100%;
+        top: -5%;
+    }
+}
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+
+html {
+    height: 125%;
+    background-color: black;
+}
+body {
+    margin: 0 0;
+    font-family: monospace;
+    font-size:4vmin;
+    box-sizing: inherit;
+    height: 125%;
+    /*
+    padding-top: $header-height;
+    padding-bottom: $footer-height;
+    */
+}
+
+header {
+    text-align: center;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    font-family: cursive;
+    font-size:5vmin;
+    width: 100%;
+    height: $header-height;
+    z-index: 5;
+    /*background: rgb(45, 107, 45);*/
+    background: rgb(21,58,88);
+    .logo {
+        position: absolute;
+        left: 10px;
+        top: 0px;
+        width: auto;
+        height: 100%;
+    }
+    .feather-image {
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 150px;
+        height: 100px;
+    }
+    .nav-bar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 45%;
+    }
+    a {
+          margin-bottom: 0;
+          float: right;
+          display: block;
+          color: rgb(45, 107, 45);
+          text-align: center;
+          padding: 0px 20px;
+          text-decoration: none;
+
+          &:hover {
+              background: #ddd;
+              color: black;
+          }
+      }
+}
+
+footer {
+    z-index: 5;
+    bottom: 0;
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    color: white;
+    background-color: black;
+    .footer-email {
+        position: absolute;
+        height: inherit;
+        font-size: 25px;
+        left: 35px;
+        bottom: 0;
+    }
+    .social-media-icons {
+        width: 32px;
+        height: 32px;
+
+    }
+    .tripadvisor-icon {
+        width: 48px;
+        height: 32px;
+    }
+    .footer-social-media {
+        position: absolute;
+        height: inherit;
+        right: 1%;
+        top: 3px;
+        a {
+            color: white;
+        }
+    }
+}
+
+.info-bar {
+    width: 100%;
+    height: 20px;
+    background: brown;
+    font-size: 15px;
+}
+
+.banner:before {
+    /*
+    content: "Experience Peru with Condor Wings Travel!";
+    @media screen and (max-width: 1000px){
+        content: "Condor Wings Travel";
+    }
+    */
+    font-size: 6vmin;
+}
+
+.container-full-page {
+    position: relative;
+    text-align: left;
+    top: $header-height;
+    height: 100%;
+    width: 100%;
+    /*
+    background-image: url("../images/20190626_120242.jpg");
+    background-size: cover;
+    */
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    .row {
+        margin: 30px;
+        margin-left: 110px;
+        div {
+            width: 100%;
+            margin: 10px;
+            input {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.content {
+    position: absolute;
+    width: 68%;
+    height: 95%;
+    top: 5%;
+    left: 16%;
+}
+
+#tour-images {
+    @extend .content;
+    width: 84%;
+}
+
+.left_sidebar {
+    position: absolute;
+    align-content: left;
+    width: 13%;
+    left: 2%;
+    height: 100%;
+    nav {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+    table {
+        position: absolute;
+        width: 100%;
+        height:400px;
+        tr {
+            position: relative;
+            width: 100%;
+            height: $sidebar-row-height;
+        }
+        td {
+            position: absolute;
+            width: 100%;
+            height: $sidebar-row-height;
+        }
+    }
+    a {
+        div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+        }
+        img {
+            width: $sidebar-image-width;
+            height: $sidebar-image-height;
+        }
+        &:hover {
+            color: red;
+            font-size: 5vmin;
+        }
+    }
+}
+
+ol {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.tour-image-container {
+    margin: 30px;
+    position: relative;
+    width: 300px;
+    height: 200px;
+    div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: rgba(246, 194, 65, 0.52);
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover > img {
+        width: 125%;
+        height: 125%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+
+.flex-container {
+    display: flex;
+  	flex-wrap: wrap;
+}
+
+#contact {
+    text-align: center;
+    a {
+        font-weight: bold;
+        &:hover {
+            font-size: 30px;
+            font-weight: bold;
+            color: red;
+        }
+    }
+}
+
+#bootstrap-overrides-home body{
+    background: black;
+    font-family: monospace;
+    font-size:4vmin;
+    box-sizing: inherit;
+}
+
+#tour-drop-down {
+
+    background-color: transparent;
+    background-image:url("../images/assets/rocks-3989777_1920.png");
+    background-repeat: no-repeat;
+    background-size: $sidebar-image-width $sidebar-image-height;
+    background-position: 50% 50%;
+    cursor:pointer;
+    width: 150px;
+    height: 100px;
+    border: none;
+    font-size: 4vmin;
+}
+
+
+
+
+
+
+#message-box {
+    text-align: left;
+    width: 100%;
+    height: 200px;
+}
+
+#send-button {
+    width: 100%;
+    background-color: rgb(45, 107, 45);
+    border-radius: 12px;
+    border: none;
+    display: inline-block;
+}

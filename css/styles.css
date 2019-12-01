@@ -1,0 +1,361 @@
+/* line 7, ../project0/sass/styles.scss */
+html {
+  height: 125%;
+  background-color: black;
+}
+
+/* line 11, ../project0/sass/styles.scss */
+body {
+  margin: 0 0;
+  font-family: monospace;
+  font-size: 4vmin;
+  box-sizing: inherit;
+  height: 125%;
+  /*
+    padding-top: $header-height;
+    padding-bottom: $footer-height;
+    */
+}
+
+/* line 23, ../project0/sass/styles.scss */
+header {
+  text-align: center;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  font-family: cursive;
+  font-size: 5vmin;
+  width: 100%;
+  height: 120px;
+  z-index: 5;
+  /*background: rgb(45, 107, 45);*/
+  background: #153a58;
+}
+
+/* line 35, ../project0/sass/styles.scss */
+header .logo {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  width: auto;
+  height: 100%;
+}
+
+/* line 42, ../project0/sass/styles.scss */
+header .feather-image {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 150px;
+  height: 100px;
+}
+
+/* line 49, ../project0/sass/styles.scss */
+header .nav-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+}
+
+/* line 55, ../project0/sass/styles.scss */
+header a {
+  margin-bottom: 0;
+  float: right;
+  display: block;
+  color: #2d6b2d;
+  text-align: center;
+  padding: 0px 20px;
+  text-decoration: none;
+}
+
+/* line 64, ../project0/sass/styles.scss */
+header a:hover {
+  background: #ddd;
+  color: black;
+}
+
+/* line 71, ../project0/sass/styles.scss */
+footer {
+  z-index: 5;
+  bottom: 0;
+  position: fixed;
+  height: 40px;
+  width: 100%;
+  color: white;
+  background-color: black;
+}
+
+/* line 79, ../project0/sass/styles.scss */
+footer .footer-email {
+  position: absolute;
+  height: inherit;
+  font-size: 25px;
+  left: 0;
+}
+
+/* line 85, ../project0/sass/styles.scss */
+footer .social-media-icons {
+  width: 32px;
+  height: 32px;
+}
+
+/* line 90, ../project0/sass/styles.scss */
+footer .tripadvisor-icon {
+  width: 48px;
+  height: 32px;
+}
+
+/* line 94, ../project0/sass/styles.scss */
+footer .footer-social-media {
+  position: absolute;
+  height: inherit;
+  right: 1%;
+  top: 3px;
+}
+
+/* line 99, ../project0/sass/styles.scss */
+footer .footer-social-media a {
+  color: white;
+}
+
+/* line 105, ../project0/sass/styles.scss */
+.info-bar {
+  width: 100%;
+  height: 20px;
+  background: brown;
+  font-size: 15px;
+}
+
+/* line 112, ../project0/sass/styles.scss */
+.banner:before {
+  /*
+    content: "Experience Peru with Condor Wings Travel!";
+    @media screen and (max-width: 1000px){
+        content: "Condor Wings Travel";
+    }
+    */
+  font-size: 6vmin;
+}
+
+/* line 122, ../project0/sass/styles.scss */
+.container-user {
+  position: relative;
+  text-align: left;
+  top: 120px;
+  height: 100%;
+  width: 100%;
+  /*
+    background-image: url("../images/20190626_120242.jpg");
+    background-size: cover;
+    */
+}
+
+/* line 134, ../project0/sass/styles.scss */
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 137, ../project0/sass/styles.scss */
+.container .row {
+  margin: 30px;
+  margin-left: 110px;
+}
+
+/* line 140, ../project0/sass/styles.scss */
+.container .row div {
+  width: 100%;
+  margin: 10px;
+}
+
+/* line 143, ../project0/sass/styles.scss */
+.container .row div input {
+  width: 100%;
+}
+
+/* line 151, ../project0/sass/styles.scss */
+.content, #tour-images {
+  position: absolute;
+  width: 68%;
+  height: 95%;
+  top: 5%;
+  left: 16%;
+}
+
+/* line 159, ../project0/sass/styles.scss */
+#tour-images {
+  width: 84%;
+}
+
+/* line 164, ../project0/sass/styles.scss */
+.left_sidebar {
+  position: absolute;
+  align-content: left;
+  width: 13%;
+  left: 2%;
+  height: 100%;
+}
+
+/* line 170, ../project0/sass/styles.scss */
+.left_sidebar nav {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+/* line 176, ../project0/sass/styles.scss */
+.left_sidebar table {
+  position: absolute;
+  width: 100%;
+  height: 400px;
+}
+
+/* line 180, ../project0/sass/styles.scss */
+.left_sidebar table tr {
+  position: relative;
+  width: 100%;
+  height: 100px;
+}
+
+/* line 185, ../project0/sass/styles.scss */
+.left_sidebar table td {
+  position: absolute;
+  width: 100%;
+  height: 100px;
+}
+
+/* line 192, ../project0/sass/styles.scss */
+.left_sidebar a div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* line 199, ../project0/sass/styles.scss */
+.left_sidebar a img {
+  width: 200px;
+  height: 150px;
+}
+
+/* line 203, ../project0/sass/styles.scss */
+.left_sidebar a:hover {
+  color: red;
+  font-size: 5vmin;
+}
+
+/* line 210, ../project0/sass/styles.scss */
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 215, ../project0/sass/styles.scss */
+ul {
+  list-style: none;
+}
+
+/* line 219, ../project0/sass/styles.scss */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* line 224, ../project0/sass/styles.scss */
+.tour-image-container {
+  margin: 30px;
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+/* line 229, ../project0/sass/styles.scss */
+.tour-image-container div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(246, 194, 65, 0.52);
+}
+
+/* line 237, ../project0/sass/styles.scss */
+.tour-image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 242, ../project0/sass/styles.scss */
+.tour-image-container:hover > img {
+  width: 125%;
+  height: 125%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 253, ../project0/sass/styles.scss */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 258, ../project0/sass/styles.scss */
+#contact {
+  text-align: center;
+}
+
+/* line 260, ../project0/sass/styles.scss */
+#contact a {
+  font-weight: bold;
+}
+
+/* line 262, ../project0/sass/styles.scss */
+#contact a:hover {
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+}
+
+/* line 270, ../project0/sass/styles.scss */
+#bootstrap-overrides-home body {
+  background: black;
+  font-family: monospace;
+  font-size: 4vmin;
+  box-sizing: inherit;
+}
+
+/* line 277, ../project0/sass/styles.scss */
+#tour-drop-down {
+  background-color: transparent;
+  background-image: url("../images/assets/rocks-3989777_1920.png");
+  background-repeat: no-repeat;
+  background-size: 200px 150px;
+  background-position: 50% 50%;
+  cursor: pointer;
+  width: 150px;
+  height: 100px;
+  border: none;
+  font-size: 4vmin;
+}
+
+/* line 296, ../project0/sass/styles.scss */
+#message-box {
+  text-align: left;
+  width: 100%;
+  height: 200px;
+}
+
+/* line 302, ../project0/sass/styles.scss */
+#send-button {
+  width: 100%;
+  background-color: #2d6b2d;
+  border-radius: 12px;
+  border: none;
+  display: inline-block;
+}
+
+/*# sourceMappingURL=styles.css.map */
