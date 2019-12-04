@@ -1,35 +1,45 @@
 from flask import Flask, render_template
 import os
+import urllib.parse
+import sys
+
+ROOT_PATH = os.path.dirname(os.path.realpath(__file__))
+
 app = Flask(__name__)
-app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 300
 
 @app.route("/")
 def index():
-    files = os.listdir("static/images")
+    files = os.listdir("static/images/front-page-slides-show/")
     galley = []
+    valid_images = (".jpg",".gif",".png",".tga")
     for file in files:
-        if file.endswith(".jpg"):
-            galley.append("static/images/"+str(file))
+        if file.endswith(valid_images):
+            galley.append(urllib.parse.quote("static/images/front-page-slides-show/"+str(file)))
     return render_template("index.html", galley = galley)
 
+@app.route("/tours/<tour_name>")
+def tour_details(tour_name):
+    page_path = "tours/" +tour_name+ ".html"
+    if not os.path.isfile("templates/"+page_path):
+        render_template("error.html", msg = "tour not found")
+    galley_dir = "static/images/tours/"+tour_name+"/"
+    files = os.listdir(galley_dir)
+    galley = []
+    print(galley_dir, file=sys.stderr)
+
+    valid_images = (".jpg",".gif",".png",".tga")
+    for file in files:
+        if file.endswith(valid_images):
+            galley.append(urllib.parse.quote(galley_dir+str(file)))
+    return render_template(page_path, galley = galley, tour_name = tour_name)
+
 @app.route("/tours")
-def more():
-    return render_template("tours.html")
+def tours():
+    tours = os.listdir("static/images/tours/")
+    for i in range(len(tours)):
+        tours[i] = tours[i].capitalize()
+    return render_template("tours.html", tours = tours)
 
-@app.after_request
-def add_header(response):
-    response.cache_control.max_age = 300
-    return response
-
-@app.context_processor
-def override_url_for():
-    return dict(url_for=dated_url_for)
-
-def dated_url_for(endpoint, **values):
-    if endpoint == 'static':
-        filename = values.get('filename', None)
-        if filename:
-            file_path = os.path.join(app.root_path,
-                                 endpoint, filename)
-            values['q'] = int(os.stat(file_path).st_mtime)
-    return url_for(endpoint, **values)
+@app.route("/about")
+def about():
+    return render_template("about.html")

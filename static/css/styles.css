@@ -1,54 +1,113 @@
-/* line 7, ../project0/sass/styles.scss */
-.mySlides {
-  display: none;
-}
-
-/* line 11, ../project0/sass/styles.scss */
-#slide-show {
-  width: 70%;
-  margin-left: 15%;
-  position: relative;
-}
-
-/* line 15, ../project0/sass/styles.scss */
-#slide-show .mySlides {
-  position: absolute;
-  width: 100%;
-  top: -5%;
-}
-
-/* line 21, ../project0/sass/styles.scss */
-.w3-left, .w3-right, .w3-badge {
-  cursor: pointer;
-}
-
-/* line 22, ../project0/sass/styles.scss */
-.w3-badge {
-  height: 13px;
-  width: 13px;
+/* line 9, ../project0/sass/styles.scss */
+* {
+  margin: 0;
   padding: 0;
 }
 
-/* line 24, ../project0/sass/styles.scss */
+/* line 14, ../project0/sass/styles.scss */
+.slides {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+}
+
+/* line 22, ../project0/sass/styles.scss */
+.slides_animation {
+  animation-duration: 4s;
+  animation-play-state: paused;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+/* line 29, ../project0/sass/styles.scss */
+.tour-slide-show {
+  width: 100%;
+  max-width: none;
+  margin-left: 0%;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+/* line 35, ../project0/sass/styles.scss */
+.tour-slide-show .mySlides {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+/* line 42, ../project0/sass/styles.scss */
+.tour-discription {
+  position: absolute;
+  width: 60%;
+  height: 600px;
+  margin-left: 30%;
+  margin-top: 0%;
+  margin-bottom: 10%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #153a58;
+  border-radius: 30px;
+}
+
+/* line 53, ../project0/sass/styles.scss */
+.tour-discription .tour-title {
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+/* line 60, ../project0/sass/styles.scss */
+.book-tour {
+  position: absolute;
+  width: 20%;
+  height: 400px;
+  margin-left: 4%;
+  margin-top: 0%;
+  background-color: #153a58;
+  border-radius: 30px;
+}
+
+/* line 70, ../project0/sass/styles.scss */
+#slide-show {
+  width: 100%;
+  max-width: none;
+  margin-left: 0%;
+  padding-top: 56.25%;
+  position: relative;
+}
+
+/* line 76, ../project0/sass/styles.scss */
+#slide-show .mySlides {
+  position: absolute;
+  width: 100%;
+  top: 0;
+}
+
+/*
+.w3-left, .w3-right, .w3-badge {cursor:pointer}
+.w3-badge {height:13px;width:13px;padding:0}
+*/
+/* line 86, ../project0/sass/styles.scss */
 html {
-  height: 125%;
+  height: auto;
   background-color: black;
 }
 
-/* line 28, ../project0/sass/styles.scss */
+/* line 90, ../project0/sass/styles.scss */
 body {
   margin: 0 0;
   font-family: monospace;
   font-size: 4vmin;
   box-sizing: inherit;
-  height: 125%;
+  height: auto;
   /*
     padding-top: $header-height;
     padding-bottom: $footer-height;
     */
 }
 
-/* line 40, ../project0/sass/styles.scss */
+/* line 102, ../project0/sass/styles.scss */
 header {
   text-align: center;
   position: fixed;
@@ -63,7 +122,7 @@ header {
   background: #153a58;
 }
 
-/* line 52, ../project0/sass/styles.scss */
+/* line 114, ../project0/sass/styles.scss */
 header .logo {
   position: absolute;
   left: 10px;
@@ -72,16 +131,7 @@ header .logo {
   height: 100%;
 }
 
-/* line 59, ../project0/sass/styles.scss */
-header .feather-image {
-  position: absolute;
-  left: 0;
-  top: 5px;
-  width: 150px;
-  height: 100px;
-}
-
-/* line 66, ../project0/sass/styles.scss */
+/* line 121, ../project0/sass/styles.scss */
 header .nav-bar {
   position: absolute;
   bottom: 0;
@@ -89,7 +139,7 @@ header .nav-bar {
   height: 45%;
 }
 
-/* line 72, ../project0/sass/styles.scss */
+/* line 127, ../project0/sass/styles.scss */
 header a {
   margin-bottom: 0;
   float: right;
@@ -100,13 +150,13 @@ header a {
   text-decoration: none;
 }
 
-/* line 81, ../project0/sass/styles.scss */
+/* line 136, ../project0/sass/styles.scss */
 header a:hover {
   background: #ddd;
   color: black;
 }
 
-/* line 88, ../project0/sass/styles.scss */
+/* line 143, ../project0/sass/styles.scss */
 footer {
   z-index: 5;
   bottom: 0;
@@ -117,7 +167,7 @@ footer {
   background-color: black;
 }
 
-/* line 96, ../project0/sass/styles.scss */
+/* line 151, ../project0/sass/styles.scss */
 footer .footer-email {
   position: absolute;
   height: inherit;
@@ -126,19 +176,19 @@ footer .footer-email {
   bottom: 0;
 }
 
-/* line 103, ../project0/sass/styles.scss */
+/* line 158, ../project0/sass/styles.scss */
 footer .social-media-icons {
   width: 32px;
   height: 32px;
 }
 
-/* line 108, ../project0/sass/styles.scss */
+/* line 163, ../project0/sass/styles.scss */
 footer .tripadvisor-icon {
   width: 48px;
   height: 32px;
 }
 
-/* line 112, ../project0/sass/styles.scss */
+/* line 167, ../project0/sass/styles.scss */
 footer .footer-social-media {
   position: absolute;
   height: inherit;
@@ -146,12 +196,12 @@ footer .footer-social-media {
   top: 3px;
 }
 
-/* line 117, ../project0/sass/styles.scss */
+/* line 172, ../project0/sass/styles.scss */
 footer .footer-social-media a {
   color: white;
 }
 
-/* line 123, ../project0/sass/styles.scss */
+/* line 178, ../project0/sass/styles.scss */
 .info-bar {
   width: 100%;
   height: 20px;
@@ -159,7 +209,7 @@ footer .footer-social-media a {
   font-size: 15px;
 }
 
-/* line 130, ../project0/sass/styles.scss */
+/* line 185, ../project0/sass/styles.scss */
 .banner:before {
   /*
     content: "Experience Peru with Condor Wings Travel!";
@@ -170,7 +220,7 @@ footer .footer-social-media a {
   font-size: 6vmin;
 }
 
-/* line 140, ../project0/sass/styles.scss */
+/* line 195, ../project0/sass/styles.scss */
 .container-full-page {
   position: relative;
   text-align: left;
@@ -183,30 +233,30 @@ footer .footer-social-media a {
     */
 }
 
-/* line 152, ../project0/sass/styles.scss */
+/* line 207, ../project0/sass/styles.scss */
 .container {
   width: 100%;
   height: 100%;
 }
 
-/* line 155, ../project0/sass/styles.scss */
+/* line 210, ../project0/sass/styles.scss */
 .container .row {
   margin: 30px;
   margin-left: 110px;
 }
 
-/* line 158, ../project0/sass/styles.scss */
+/* line 213, ../project0/sass/styles.scss */
 .container .row div {
   width: 100%;
   margin: 10px;
 }
 
-/* line 161, ../project0/sass/styles.scss */
+/* line 216, ../project0/sass/styles.scss */
 .container .row div input {
   width: 100%;
 }
 
-/* line 169, ../project0/sass/styles.scss */
+/* line 224, ../project0/sass/styles.scss */
 .content, #tour-images {
   position: absolute;
   width: 68%;
@@ -215,112 +265,57 @@ footer .footer-social-media a {
   left: 16%;
 }
 
-/* line 177, ../project0/sass/styles.scss */
+/* line 232, ../project0/sass/styles.scss */
 #tour-images {
   width: 84%;
 }
 
-/* line 182, ../project0/sass/styles.scss */
-.left_sidebar {
-  position: absolute;
-  align-content: left;
-  width: 13%;
-  left: 2%;
-  height: 100%;
-}
-
-/* line 188, ../project0/sass/styles.scss */
-.left_sidebar nav {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-}
-
-/* line 194, ../project0/sass/styles.scss */
-.left_sidebar table {
-  position: absolute;
-  width: 100%;
-  height: 400px;
-}
-
-/* line 198, ../project0/sass/styles.scss */
-.left_sidebar table tr {
-  position: relative;
-  width: 100%;
-  height: 100px;
-}
-
-/* line 203, ../project0/sass/styles.scss */
-.left_sidebar table td {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-}
-
-/* line 210, ../project0/sass/styles.scss */
-.left_sidebar a div {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-/* line 217, ../project0/sass/styles.scss */
-.left_sidebar a img {
-  width: 200px;
-  height: 150px;
-}
-
-/* line 221, ../project0/sass/styles.scss */
-.left_sidebar a:hover {
-  color: red;
-  font-size: 5vmin;
-}
-
-/* line 228, ../project0/sass/styles.scss */
+/* line 238, ../project0/sass/styles.scss */
 ol {
   list-style: none;
   padding-left: 0;
 }
 
-/* line 233, ../project0/sass/styles.scss */
+/* line 243, ../project0/sass/styles.scss */
 ul {
   list-style: none;
 }
 
-/* line 237, ../project0/sass/styles.scss */
+/* line 247, ../project0/sass/styles.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 242, ../project0/sass/styles.scss */
+/* line 252, ../project0/sass/styles.scss */
 .tour-image-container {
   margin: 30px;
+  margin-bottom: 50px;
   position: relative;
   width: 300px;
   height: 200px;
+  text-align: left;
 }
 
-/* line 247, ../project0/sass/styles.scss */
+/* line 259, ../project0/sass/styles.scss */
 .tour-image-container div {
+  font-size: 20px;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: 10px;
+  margin-left: 15px;
+  /*transform: translate(-50%, -50%);*/
   color: rgba(246, 194, 65, 0.52);
 }
 
-/* line 255, ../project0/sass/styles.scss */
+/* line 269, ../project0/sass/styles.scss */
 .tour-image-container img {
   width: 100%;
   height: 100%;
+  border-radius: 30px;
 }
 
-/* line 260, ../project0/sass/styles.scss */
-.tour-image-container:hover > img {
+/* line 275, ../project0/sass/styles.scss */
+.tour-image-container:hover img {
   width: 125%;
   height: 125%;
   position: absolute;
@@ -329,30 +324,31 @@ a {
   transform: translate(-50%, -50%);
 }
 
-/* line 271, ../project0/sass/styles.scss */
+/* line 286, ../project0/sass/styles.scss */
 .flex-container {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 30px;
 }
 
-/* line 276, ../project0/sass/styles.scss */
+/* line 292, ../project0/sass/styles.scss */
 #contact {
   text-align: center;
 }
 
-/* line 278, ../project0/sass/styles.scss */
+/* line 294, ../project0/sass/styles.scss */
 #contact a {
   font-weight: bold;
 }
 
-/* line 280, ../project0/sass/styles.scss */
+/* line 296, ../project0/sass/styles.scss */
 #contact a:hover {
   font-size: 30px;
   font-weight: bold;
   color: red;
 }
 
-/* line 288, ../project0/sass/styles.scss */
+/* line 304, ../project0/sass/styles.scss */
 #bootstrap-overrides-home body {
   background: black;
   font-family: monospace;
@@ -360,7 +356,7 @@ a {
   box-sizing: inherit;
 }
 
-/* line 295, ../project0/sass/styles.scss */
+/* line 311, ../project0/sass/styles.scss */
 #tour-drop-down {
   background-color: transparent;
   background-image: url("../images/assets/rocks-3989777_1920.png");
@@ -374,14 +370,14 @@ a {
   font-size: 4vmin;
 }
 
-/* line 314, ../project0/sass/styles.scss */
+/* line 330, ../project0/sass/styles.scss */
 #message-box {
   text-align: left;
   width: 100%;
   height: 200px;
 }
 
-/* line 320, ../project0/sass/styles.scss */
+/* line 336, ../project0/sass/styles.scss */
 #send-button {
   width: 100%;
   background-color: #2d6b2d;

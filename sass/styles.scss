@@ -3,26 +3,88 @@ $sidebar-image-height:150px;
 $sidebar-image-width:200px;
 $header-height:120px;
 $footer-height:40px;
+$border-radius:30px;
+$prime-color: rgb(21,58,88);
 
-.mySlides {
-    display:none;
+*{
+    margin: 0;
+    padding: 0;
 }
 
-#slide-show {
-    width: 70%;
-    margin-left: 15%;
+.slides {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+}
+
+.slides_animation {
+    animation-duration: 4s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+.tour-slide-show {
+    width: 100%;
+    max-width:none;
+    margin-left: 0%;
+    padding-top: 56.25%;
     position: relative;
     .mySlides {
         position: absolute;
         width: 100%;
-        top: -5%;
+        top: 0;
     }
 }
+
+.tour-discription {
+    position: absolute;
+    width: 60%;
+    height: 600px;
+    margin-left: 30%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $prime-color;
+    border-radius: $border-radius;
+    .tour-title {
+
+        font-weight: bold;
+        font-family: fantasy;
+    }
+}
+
+.book-tour {
+    position: absolute;
+    width: 20%;
+    height: 400px;
+    margin-left: 4%;
+    margin-top: 0%;
+    background-color: $prime-color;
+    border-radius: $border-radius;
+}
+
+#slide-show {
+    width: 100%;
+    max-width:none;
+    margin-left: 0%;
+    padding-top: 56.25%;
+    position: relative;
+    .mySlides {
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+}
+/*
 .w3-left, .w3-right, .w3-badge {cursor:pointer}
 .w3-badge {height:13px;width:13px;padding:0}
-
+*/
 html {
-    height: 125%;
+    height: auto;
     background-color: black;
 }
 body {
@@ -30,7 +92,7 @@ body {
     font-family: monospace;
     font-size:4vmin;
     box-sizing: inherit;
-    height: 125%;
+    height: auto;
     /*
     padding-top: $header-height;
     padding-bottom: $footer-height;
@@ -48,20 +110,13 @@ header {
     height: $header-height;
     z-index: 5;
     /*background: rgb(45, 107, 45);*/
-    background: rgb(21,58,88);
+    background: $prime-color;
     .logo {
         position: absolute;
         left: 10px;
         top: 0px;
         width: auto;
         height: 100%;
-    }
-    .feather-image {
-        position: absolute;
-        left: 0;
-        top: 5px;
-        width: 150px;
-        height: 100px;
     }
     .nav-bar {
         position: absolute;
@@ -179,51 +234,6 @@ footer {
     width: 84%;
 }
 
-.left_sidebar {
-    position: absolute;
-    align-content: left;
-    width: 13%;
-    left: 2%;
-    height: 100%;
-    nav {
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        left: 0;
-    }
-    table {
-        position: absolute;
-        width: 100%;
-        height:400px;
-        tr {
-            position: relative;
-            width: 100%;
-            height: $sidebar-row-height;
-        }
-        td {
-            position: absolute;
-            width: 100%;
-            height: $sidebar-row-height;
-        }
-    }
-    a {
-        div {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-        }
-        img {
-            width: $sidebar-image-width;
-            height: $sidebar-image-height;
-        }
-        &:hover {
-            color: red;
-            font-size: 5vmin;
-        }
-    }
-}
 
 ol {
     list-style: none;
@@ -241,23 +251,28 @@ a {
 
 .tour-image-container {
     margin: 30px;
+    margin-bottom: 50px;
     position: relative;
     width: 300px;
     height: 200px;
+    text-align: left;
     div {
+        font-size: 20px;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+
+        bottom: 10px;
+        margin-left:  15px;
+        /*transform: translate(-50%, -50%);*/
         color: rgba(246, 194, 65, 0.52);
     }
 
     img {
         width: 100%;
         height: 100%;
+        border-radius: $border-radius;
     }
 
-    &:hover > img {
+    &:hover  img {
         width: 125%;
         height: 125%;
         position: absolute;
@@ -271,6 +286,7 @@ a {
 .flex-container {
     display: flex;
   	flex-wrap: wrap;
+    margin-bottom: 30px;
 }
 
 #contact {

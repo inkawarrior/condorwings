@@ -2,18 +2,18 @@
 <html>
 <head>
 	<title>Condor Wings Travel</title>
-	<link rel="stylesheet" href="static/css/styles.css">
+	<link rel="stylesheet" href="{{ url_for('index') }}static/css/styles.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="shortcut icon" href="static/images/assets/icons/Condor_Wings/green_wing_icon_kdC_icon.ico" />
+	<link rel="shortcut icon" href="{{ url_for('index') }}static/images/assets/icons/Condor_Wings/green_wing_icon_kdC_icon.ico" />
 </head>
 <body>
 	<header class="header">
-		<a href="/"><img class="logo" src="static/images/assets/CondorWingsIcon/CondorWings/banner0.png"></a>
+		<a href="/"><img class="logo" src="{{ url_for('index') }}static/images/assets/CondorWingsIcon/CondorWings/bannerTR0.png"></a>
 
 		<div class="nav-bar">
-			<a href="Contact.html">Contact</a>
-			<a href="tours">Tours</a>
-			<a href="/">Home</a>
+			<a href={{ url_for('about') }}>About</a>
+			<a href={{ url_for('tours') }}>Tours</a>
+			<a href={{ url_for('index') }}>Home</a>
 
 		</div>
     </header>
@@ -21,14 +21,14 @@
     	{% block content %}{% endblock %}
     </div>
 	<footer>
-		<img id="footer-email-icon" class="social-media-icons" src="static/images/assets/icons/email.png">
+		<img id="footer-email-icon" class="social-media-icons" src="{{ url_for('index') }}static/images/assets/icons/email.png">
 		<div class="footer-email">
 			condorwingstravel@hotmail.com
 		</div>
 		<div class="footer-social-media">
-			<a href="https://www.facebook.com/condorwingstravelperu/?modal=admin_todo_tour" title="Facebook"><img class="social-media-icons" src="static/images/assets/icons/fb-logo.png"></a>
-			<a href="https://www.tripadvisor.com.pe/Profile/condorwingstravel?fid=1af05395-a849-431e-9050-42e1eed6c7d5" title="tripadvisor"><img class="tripadvisor-icon" src="static/images/assets/icons/tripadvisor-white.png"></a>
-			<a href="https://www.instagram.com/condorwingstravel/" title="instagram"><img class="social-media-icons" src="static/images/assets/icons/instagram-logo-white.png"></a>
+			<a href="https://www.facebook.com/condorwingstravelperu/?modal=admin_todo_tour" title="Facebook"><img class="social-media-icons" src="{{ url_for('index') }}static/images/assets/icons/fb-logo.png"></a>
+			<a href="https://www.tripadvisor.com.pe/Profile/condorwingstravel?fid=1af05395-a849-431e-9050-42e1eed6c7d5" title="tripadvisor"><img class="tripadvisor-icon" src="{{ url_for('index') }}static/images/assets/icons/tripadvisor-white.png"></a>
+			<a href="https://www.instagram.com/condorwingstravel/" title="instagram"><img class="social-media-icons" src="{{ url_for('index') }}static/images/assets/icons/instagram-logo-white.png"></a>
 		</div>
 	</footer>
 </body>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Learn JS
+        </title>
+        
+    </head>
+    <body>
+        <h1 id="test">Color</h1>
+        <button type="button" name="button" data-color = "red">Red</button>
+        <button type="button" name="button" data-color = "blue">Blue</button>
+        <button type="button" name="button" data-color = "green">Green</button>
+        <div id="image-holder" style="position:relative; height:400px">
+            <img width="600px" height = "400px" src = "static/images/front-page-slides-show/Moray%20Cropped.jpg">
+            <img data-src = "static/images/front-page-slides-show/DSC_0110%20Cropped.jpg" style="opacity:0; position: absolute; left: 0; top: 0; width:100%; height:100%">
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+        alert("test0")
+
+        function color(){
+            document.querySelector('h1').style.color = "red"
+        }
+        window.onload = load_deffered_images();
+        document.addEventListener('DOMContentLoaded',function() {
+
+            console.log(document.querySelector('h1').innerHTML);
+            document.querySelector('h1').innerHTML = "TEST";
+            document.querySelectorAll('button').forEach( button =>{
+                button.onclick = function(){
+                    document.querySelector('h1').style.color = button.getAttribute('data-color');
+                }
+            });
+
+        });
+
+
+
+        function load_deffered_images(){
+                console.log("load_deffered_images")
+        		var images = document.querySelectorAll('img[data-src]');
+                console.log(images)
+                for(var i = 0; i < images.length; i++){
+                        console.log(images[i]);
+                		load_deffered_image(images[i]);
+                }
+        }
+
+        function load_deffered_image(image){
+                console.log("load_deffered_image")
+                console.log(image)
+        		if(image.getAttribute('data-src')){
+            		image.setAttribute('src', image.getAttribute('data-src'));
+                    image.removeAttribute('data-src')
+                    image.addEventListener('load', function(){
+                    	image.style.opacity = 1;
+
+                        var placeholder = image.previousElementSibling;
+                        placeholder.style.display = 'none';
+                    })
+            }
+        }
+
+
+</script>

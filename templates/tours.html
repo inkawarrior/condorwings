@@ -4,22 +4,14 @@
 
 <div class="content" id="tour-images">
     <div class="flex-container">
+        {% for tour in tours %}
         <div class="tour-image-container">
-            <img src="static/images/Moray.jpg">
-            <div class="center">Moray</div>
+            <a href="/tours/{{ tour }}">
+            <img src="static/images/tours/{{ tour }}/link/{{ tour }}.jpg">
+            </a>
+            <div class="center">{{ tour }}</div>
         </div>
-        <div class="tour-image-container">
-            <img src="static/images/Salineras3.jpg">
-            <div class="center">Salineras</div>
-        </div>
-        <div class="tour-image-container">
-            <img src="static/images/DSC_0111.jpg">
-            <div class="center">Pumamarca</div>
-        </div>
-        <div class="tour-image-container">
-            <img src="static/images/20191125_063805.jpg">
-            <div class="center">  Sacred Valley</div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 

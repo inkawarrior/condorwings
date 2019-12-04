@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Slide Animation Test</title>
+        <link rel="stylesheet" href="slide_animation_test.css">
+    </head>
+    <body>
+        <div class="slides-container">
+            <img class="slides" src="static/images/front-page-slides-show/Moray%20Cropped.jpg">
+        </div>
+        <button type="button" name="button" data-direction="left"><<<<</button>
+        <button type="button" name="button" data-direction="right">>>>></button>
+    </body>
+</html>
+<script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(){
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = slide_left;
+                });
+        });
+        function slide_left(){
+            console.log("slide_left");
+            var slide = document.querySelector("img");
+            slide.style.animationName = "slide_left_out";
+            console.log(slide.style.animationName);
+            slide.style.animationPlayState = 'running';
+            console.log(slide.style.animationPlayState);
+            console.log(slide.style);
+        }
+</script>

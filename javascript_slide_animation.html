@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Slide Animation Test</title>
+        <link rel="stylesheet" href="slide_animation_test.css">
+    </head>
+    <body>
+        <div class="slides-container">
+            <img class="slides slides_animation" src="static/images/front-page-slides-show/Moray%20Cropped.jpg">
+            <img class="slides slides_animation" src="static/images/front-page-slides-show/DSC_0110%20Cropped.jpg">
+        </div>
+        <button type="button" name="button" data-direction="left"><<<<</button>
+        <button type="button" name="button" data-direction="right">>>>></button>
+    </body>
+</html>
+<script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function(){
+                document.querySelectorAll('button').forEach(button => {
+                    button.onclick = slide_left;
+                });
+        });
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        function slide_left(){
+            var slides = document.getElementsByClassName("slides_animation");
+            var current_slide = slideIndex - 1;
+            slideIndex++;
+            if(slideIndex > slides.length){
+                slideIndex = 1;
+            }
+            const __current_slide = slides[current_slide];
+            const __next_slide = slides[slideIndex-1];
+            __current_slide.style.animationDuration = 4000;
+            __next_slide.style.animationDuration = 4000;
+
+            __current_slide.style.animationIterationCount = "1";
+            __next_slide.style.animationIterationCount = "1";
+
+            __next_slide.style.display = "block";
+            __current_slide.style.animationName = "slide_left_out";
+            __next_slide.style.animationName = "slide_left_in";
+
+            __current_slide.style.animationPlayState = 'running';
+            __next_slide.style.animationPlayState = 'running';
+
+            __current_slide.addEventListener('animationend', function reset_animation(){
+                __current_slide.removeEventListener('animationend', reset_animation);
+                __current_slide.style.display = "none";
+                __next_slide.style.display = "block";
+                __current_slide.style.animationPlayState = 'paused';
+                __next_slide.style.animationPlayState = 'paused';
+
+                __current_slide.classList.remove('slides_animation');
+                __next_slide.classList.remove('slides_animation');
+                slides = document.getElementsByClassName("slides_animation");
+
+                setTimeout(()=>{
+                    __current_slide.classList.add('slides_animation');
+                    __next_slide.classList.add('slides_animation');
+                }, 10);
+
+            });
+        }
+
+        function reset_animation(current_slide, next_slide){
+
+        }
+
+        function showDivs(n){
+            var i;
+            var slides = document.getElementsByClassName("slides");
+            if(n > slides.length)slideIndex = 1;
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
+        }
+
+</script>
