@@ -1,0 +1,108 @@
+/* line 1, ../project0/sass/utilities/utility_class.scss */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 3, ../project0/sass/tour_details.scss */
+.currency_form_popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 60px;
+  width: 300px;
+  display: none;
+  background-color: rgba(0, 77, 0, 0.5);
+  border: 7px outset rgba(0, 77, 0, 0.5);
+  border-radius: 7px;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+/* line 22, ../project0/sass/tour_details.scss */
+#input {
+  height: 30px;
+  width: 70%;
+}
+
+/* line 27, ../project0/sass/tour_details.scss */
+.ui-menu {
+  z-index: 5;
+}
+
+/* line 31, ../project0/sass/tour_details.scss */
+.currency_form_input {
+  border: 3px inset rgba(80, 80, 80, 0.5);
+}
+
+/* line 35, ../project0/sass/tour_details.scss */
+.currency_form_input, .ui-menu-item {
+  background-color: rgba(80, 80, 80, 0.5);
+  cursor: default;
+}
+
+/* line 40, ../project0/sass/tour_details.scss */
+.ui-state-active {
+  background-color: #e68a00;
+}
+
+/* line 44, ../project0/sass/tour_details.scss */
+.ui-autocomplete span.hl_results {
+  z-index: 5;
+  background-color: rgba(80, 80, 80, 0.5);
+}
+
+/* line 46, ../project0/sass/tour_details.scss */
+.ui-autocomplete {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 5px;
+}
+
+/* line 53, ../project0/sass/tour_details.scss */
+.ui-autocomplete li {
+  font-size: 16px;
+}
+
+/* line 54, ../project0/sass/tour_details.scss */
+html .ui-autocomplete {
+  height: 250px;
+}
+
+/* line 58, ../project0/sass/tour_details.scss */
+.tour-discription {
+  position: absolute;
+  width: 60%;
+  height: 600px;
+  margin-left: 30%;
+  margin-top: 7%;
+  margin-bottom: 10%;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #153a58;
+  border-radius: 30px;
+}
+
+/* line 69, ../project0/sass/tour_details.scss */
+.tour-discription .tour-title {
+  font-weight: bold;
+  font-family: fantasy;
+}
+
+/* line 76, ../project0/sass/tour_details.scss */
+.book-tour {
+  position: absolute;
+  width: 20%;
+  height: 400px;
+  margin-left: 4%;
+  margin-top: 7%;
+  padding-top: 20px;
+  padding-left: 15px;
+  background-color: #153a58;
+  border-radius: 30px;
+}
+
+/*# sourceMappingURL=tour_details.css.map */

@@ -1,18 +1,28 @@
 {% extends "layout.html" %}
 
+{% block header %}
+    <link rel="stylesheet" href="{{ url_for('index') }}static/css/styles_tour_index.css">
+{% endblock %}
+
 {% block content %}
 
-<div class="content" id="tour-images">
-    <div class="flex-container">
-        {% for tour in tours %}
-        <div class="tour-image-container">
-            <a href="/tours/{{ tour }}">
-            <img src="static/images/tours/{{ tour }}/link/{{ tour }}.jpg">
-            </a>
-            <div class="center">{{ tour }}</div>
+    <div class="content clearfix" id="tour-images">
+        <div class="flex-container">
+            {% for division in tours.keys() %}
+                <h3 class="tour-division-title">{{division}}</h3>
+                <div class="tour-division">
+                    {% for tour in tours[division] %}
+                        <div class="tour-image-container">
+                            <a href="/tours/{{ division }}/{{ tour[0] }}">
+                            <img src="static/images/tours/{{ division }}/{{ tour[0] }}/link/{{ tour[1] }}">
+                            </a>
+                            <div class="center">{{ tour[0] }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
-</div>
+<div class="wrapper"></div>
 
 {% endblock %}

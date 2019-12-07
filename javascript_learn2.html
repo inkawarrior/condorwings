@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Learn JS</title>
+    </head>
+    <body>
+        <div class="block_slider_container" style="position:absolute; height:300px; width:450px;background-color:green;left:0;">
+
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',() => {
+        document.getElementsByClassName("block_slider_container")[0].onmousedown = drag;
+    });
+
+
+    var last_pos = false
+    function drag(event){
+            console.log("start drag")
+            if(last_pos === false){
+                console.log("register first point")
+                last_pos = event.pageX
+            }
+
+            window.addEventListener('mousemove', drag_move)
+            window.addEventListener('mouseup', function drag_end(){
+                console.log("mousemove event deleted")
+                last_pos = false
+                window.removeEventListener('mousemove', drag_move)
+                window.removeEventListener('mouseup', drag_end)
+            })
+    }
+
+    function drag_move(e){
+        const w = window.innerWidth;
+        const block_container = document.getElementsByClassName("block_slider_container")[0]
+        const width = block_container.style.width.substring(0, block_container.style.width.indexOf('p'))
+
+        console.log("mousemove detected")
+        var deltaX = e.pageX - last_pos
+        console.log(deltaX)
+        var rect = block_container.getBoundingClientRect();
+        var x = block_container.style.left.substring(0, block_container.style.left.indexOf('p'))
+        x = parseInt(x)
+        console.log("rect.right, left, blockleft, x, w, width")
+        console.log(rect.right, rect.left, block_container.style.left, x, w, width)
+        block_container.style.left = (deltaX + x).toString()+"px";
+        console.log((deltaX + x).toString()+"px")
+        /*
+        if(deltaX > 0 && rect.right - deltaX < w){
+            console.log("case 1 ")
+            console.log((w-width).toString()+"px")
+            block_container.style.left = (w-width).toString()+"px";
+
+        }else if (deltaX < 0 && rect.left - deltaX > 0) {
+            console.log("case 2 ")
+            block_container.style.left = 0;
+        }else{
+            console.log("case 3 ")
+            block_container.style.left = (deltaX + x).toString()+"px";
+            console.log((deltaX + x).toString()+"px")
+        }
+        */
+        last_pos = e.pageX
+    }
+    /*
+    function drag_move(e){
+        const w = window.innerWidth;
+        const block_container = document.getElementsByClassName("block_slider_container")[0]
+        const width = block_container.style.width.substring(0, block_container.style.width.indexOf('p'))
+
+        console.log("mousemove detected")
+        var deltaX = e.pageX - last_pos
+        console.log(deltaX)
+        var rect = block_container.getBoundingClientRect();
+        var tr = block_container.style.transform
+        var x = tr.substring(tr.indexOf('X')+2, tr.indexOf('p'))
+        x = parseInt(x)
+        console.log("rect.right, left, transform, x, w, width")
+        console.log(rect.right, rect.left, tr, x, w, width)
+        //block_container.style.transform = "translateX("+(deltaX + x).toString()+"px)";
+        console.log("translateX("+(deltaX + x).toString()+"px)")
+
+        if(deltaX > 0 && rect.right - deltaX < w){
+            console.log("case 1 ")
+            console.log((w-width).toString()+"px")
+            block_container.style.left = (w-width).toString()+"px";
+
+        }else if (deltaX < 0 && rect.left - deltaX > 0) {
+            console.log("case 2 ")
+            block_container.style.left = 0;
+        }else{
+            console.log("case 3 ")
+            block_container.style.left = (deltaX + x).toString()+"px";
+            console.log((deltaX + x).toString()+"px")
+        }
+
+        last_pos = e.pageX
+    }
+    */
+</script>

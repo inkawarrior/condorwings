@@ -1,0 +1,193 @@
+@import "utilities/variables";
+
+.slide-show {
+    width: 100%;
+    max-width:none;
+    margin-left: 0%;
+    padding-top: 56.25%;
+    position: relative;
+    .slides {
+        position: absolute;
+        width: 100%;
+        top: 0;
+
+    }
+}
+
+.arrow-absolute-container {
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    top: 0;
+}
+
+.arrow-sticky-container {
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
+    position: sticky;
+    top: 200px;
+    width: 100%;
+    height: 80px;
+    z-index: 5;
+}
+
+.arrow-block{
+    background-color: $prime-color;
+    position: absolute;
+    filter: opacity(40%);
+    width: 100%;
+    height:100%;
+    z-index: 6;
+}
+
+.arrow {
+    top: 200px;
+    right: 0px;
+    float: right;
+    position: absolute;
+    border-radius: 10px;
+    height: 60px;
+    width: 60px;
+    z-index: 5;
+    overflow:hidden;
+    cursor: pointer;
+    img {
+        filter: opacity(50%);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.arrow-right {
+    @extend .arrow;
+}
+
+.arrow-left {
+    @extend .arrow;
+    left: 0;
+    float: left;
+    img {
+        transform: scaleX(-1);
+    }
+}
+
+.slide {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
+
+
+
+.slides {
+    @extend .slide;
+    display: none;
+}
+
+.placeholder {
+    @extend .slide;
+    display: block;
+
+}
+
+.slides_animation {
+    animation-duration: 4s;
+    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    /*animation-iteration-count: 1;*/
+}
+
+.slides-container {
+    width: 100%;
+    max-width:none;
+    margin-left: 0%;
+    padding-top: 56.25%;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-container {
+    width: 100%;
+}
+
+.tour-slide-show {
+    width: 100%;
+    max-width:none;
+    margin-left: 0%;
+    padding-top: 56.25%;
+    position: relative;
+    .slides {
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
+}
+
+.slide_jumper {
+    padding: 9px;
+    display:inline-block;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    border: 3px outset $prime-color-tr;
+    &:hover {
+        background-color: $prime-color-tr;
+    }
+}
+
+.slide_jumper_selected {
+    background-color: $prime-color-tr;
+}
+
+.slide_jumper_wrapper {
+    width: 100%;
+    bottom:10px;
+    text-align: center;
+    position: absolute;
+}
+
+@keyframes slide_left_out {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: -100%;
+    }
+}
+
+@keyframes slide_left_in {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+@keyframes slide_right_out {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes slide_right_in {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 0;
+    }
+}

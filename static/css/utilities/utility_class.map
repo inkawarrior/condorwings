@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "utility_class.css",
+	"sources": [
+		"../../../sass/utilities/utility_class.scss"
+	],
+	"sourcesContent": [
+		".center {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%,-50%);\r\n}\r\n"
+	],
+	"names": [],
+	"mappings": ";AAAA,AAAA,OAAO,CAAC;EACJ,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAoB;CAClC"
+}

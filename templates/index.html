@@ -1,62 +1,28 @@
 {% extends "layout.html" %}
 
+{% block header %}
+    <script src="{{ url_for('static', filename='javascript/slideshow.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/index.js') }}"></script>
+
+{% endblock %}
+
 {% block content %}
+{% include "slideshow.html" %}
+<div style="height:600px;">
 
-<div id="slide-show" class="w3-content w3-display-container">
-    {% for image in galley %}
-                <img class="mySlides" src={{ image }}>
-    {% endfor %}
-    <!--
-  <img class="mySlides" src="static/images/Moray.jpg">
-  <img class="mySlides" src="static/images/Salineras 3.jpg">
-  <img class="mySlides" src="static/images/DSC_0111.jpg">
-  -->
-  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-    {% macro increment(dct, key, inc=1)%}
-        {% if dct.update({key: dct[key] + inc}) %} {% endif %}
-    {% endmacro %}
-    {% set counter = {'counter1':0} %}
-    {% for image in galley %}
-                {{ increment(counter, 'counter1') }}
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv({{counter['counter1']}})"></span>
-    {% endfor %}
-  </div>
 </div>
-<script>
-    var intervalID = setInterval(function(){plusDivs(1);}, 5000);
-    var slideIndex = 1;
-    showDivs(slideIndex);
-
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
-    }
-
-    function currentDiv(n) {
-      showDivs(slideIndex = n);
-    }
-
-    function showDivs(n) {
-      var i;
-
-      var x = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
-      }
-      x[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " w3-white";
-      clearInterval(intervalID);
-      intervalID = setInterval(function(){plusDivs(1);}, 5000);
-    }
-
-
-</script>
+<div class="block_slider_container">
+    <div class="block_slider">
+        {% for block in blocks %}
+            <div class="block">
+                {{block['content']}}
+            </div>
+        {% endfor %}
+    </div>
+    <div class="block_container_filter">
+        <img id="block_left_filter" src="{{ url_for('static', filename='images/assets/imageCreated2.png') }}" alt=":(">
+        <img id="block_right_filter" src="{{ url_for('static', filename='images/assets/imageCreated.png') }}" alt=":(">
+    </div>
+</div>
 
 {% endblock %}

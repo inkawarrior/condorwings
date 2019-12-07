@@ -16,12 +16,16 @@
 </html>
 <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function(){
+
                 document.querySelectorAll('button').forEach(button => {
                     button.onclick = slide_left;
                 });
         });
+        var slides0 = document.getElementsByClassName("slides_animation");
+
         var slideIndex = 1;
         showDivs(slideIndex);
+        fades_in(slides0[0],slides0[1]);
         function slide_left(){
             var slides = document.getElementsByClassName("slides_animation");
             var current_slide = slideIndex - 1;
@@ -63,9 +67,6 @@
             });
         }
 
-        function reset_animation(current_slide, next_slide){
-
-        }
 
         function showDivs(n){
             var i;
@@ -75,6 +76,32 @@
               slides[i].style.display = "none";
             }
             slides[slideIndex-1].style.display = "block";
+        }
+
+        function fades_in(image_out, image_in){
+            console.log("start fade in");
+            console.log("image in:");
+            console.log(image_in);
+            console.log("image out:");
+            console.log(image_out);
+            image_in.style.opacity = 0;
+            image_in.style.display = "block";
+            image_out.style.opacity = 1;
+            var tick = function () {
+                console.log("start tick");
+                console.log("image in:");
+                console.log(image_in);
+                console.log("image out:");
+                console.log(image_out);
+                console.log(image_in.style.opacity+0.01);
+                image_in.style.opacity = Number(image_in.style.opacity) + 0.01;
+                image_out.style.opacity = Number(image_out.style.opacity) - 0.01;
+                if (image_in.style.opacity < 1) {
+                    setTimeout(tick, 100);
+                }
+            };
+            tick();
+            console.log("finish fade in");
         }
 
 </script>

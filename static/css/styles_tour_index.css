@@ -1,0 +1,68 @@
+/* line 4, ../project0/sass/styles_tour_index.scss */
+.tour-division {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 10, ../project0/sass/styles_tour_index.scss */
+.tour-division-title {
+  color: white;
+}
+
+/* line 14, ../project0/sass/styles_tour_index.scss */
+.tour-image-container {
+  margin: 30px;
+  margin-right: 30px;
+  margin-bottom: 50px;
+  position: relative;
+  float: left;
+  width: 300px;
+  height: 200px;
+  border-radius: 30px;
+  text-align: left;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+/* line 25, ../project0/sass/styles_tour_index.scss */
+.tour-image-container div {
+  font-size: 20px;
+  position: absolute;
+  /*transform: translate(-50%, -50%);*/
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  background-color: rgba(32, 32, 32, 0.5);
+  color: rgba(246, 194, 65, 0.52);
+}
+
+/* line 41, ../project0/sass/styles_tour_index.scss */
+.tour-image-container img {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 46, ../project0/sass/styles_tour_index.scss */
+.tour-image-container:hover {
+  transform: scale(1.7);
+  z-index: 5;
+}
+
+/* line 51, ../project0/sass/styles_tour_index.scss */
+.tour-image-container:hover img {
+  position: absolute;
+}
+
+/* line 58, ../project0/sass/styles_tour_index.scss */
+.flex-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 80px;
+}
+
+/*# sourceMappingURL=styles_tour_index.css.map */

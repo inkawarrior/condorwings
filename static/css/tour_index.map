@@ -1,0 +1,14 @@
+{
+	"version": 3,
+	"file": "tour_index.css",
+	"sources": [
+		"../../sass/tour_index.scss",
+		"../../sass/utilities/variables.scss"
+	],
+	"sourcesContent": [
+		"@import \"utilities/variables\";\r\n\r\n\r\n.tour-division {\r\n    width: 100%;\r\n    margin:0;\r\n    padding: 0;\r\n}\r\n\r\n.tour-division-title {\r\n    color: white;\r\n}\r\n\r\n.tour-image-container {\r\n    margin: 30px;\r\n    margin-right: 30px;\r\n    margin-bottom: 50px;\r\n    position: relative;\r\n    float: left;\r\n    width: 300px;\r\n    height: 200px;\r\n    border-radius: $border-radius;\r\n    text-align: left;\r\n    overflow: hidden;\r\n    div {\r\n        font-size: 20px;\r\n        position: absolute;\r\n\r\n        //bottom: 10px;\r\n        //margin-left:  15px;\r\n        /*transform: translate(-50%, -50%);*/\r\n        bottom: 0;\r\n        width: 100%;\r\n        height: 20%;\r\n        padding-bottom: 10px;\r\n        padding-left: 15px;\r\n        background-color: rgba(32,32,32,0.5);\r\n        color: rgba(246, 194, 65, 0.52);\r\n    }\r\n\r\n    img {\r\n        width: 100%;\r\n        height: 100%;\r\n    }\r\n    transition: transform 0.5s ease;\r\n    &:hover {\r\n        transform: scale(1.7);\r\n        z-index: 5;\r\n    }\r\n    z-index: 0;\r\n    &:hover  img {\r\n        position: absolute;\r\n\r\n    }\r\n}\r\n\r\n\r\n.flex-container {\r\n    display: flex;\r\n  \tflex-wrap: wrap;\r\n    margin-bottom: 30px;\r\n}\r\n",
+		"$sidebar-row-height: 100px;\r\n$sidebar-image-height:150px;\r\n$sidebar-image-width:200px;\r\n$header-height:120px;\r\n$footer-height:40px;\r\n$border-radius:30px;\r\n$prime-color: rgb(21,58,88);\r\n"
+	],
+	"names": [],
+	"mappings": ";AAGA,AAAA,cAAc,CAAC;EACX,KAAK,EAAE,IAAI;EACX,MAAM,EAAC,CAAC;EACR,OAAO,EAAE,CAAC;CACb;;;AAED,AAAA,oBAAoB,CAAC;EACjB,KAAK,EAAE,KAAK;CACf;;;AAED,AAAA,qBAAqB,CAAC;EAClB,MAAM,EAAE,IAAI;EACZ,YAAY,EAAE,IAAI;EAClB,aAAa,EAAE,IAAI;EACnB,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,IAAI;EACX,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,aAAa,EChBF,IAAI;EDiBf,UAAU,EAAE,IAAI;EAChB,QAAQ,EAAE,MAAM;EAqBhB,UAAU,EAAE,mBAAmB;EAK/B,OAAO,EAAE,CAAC;CAKb;;;AAzCD,AAWI,qBAXiB,CAWjB,GAAG,CAAC;EACA,SAAS,EAAE,IAAI;EACf,QAAQ,EAAE,QAAQ;EAIlB,qCAAqC;EACrC,MAAM,EAAE,CAAC;EACT,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,GAAG;EACX,cAAc,EAAE,IAAI;EACpB,YAAY,EAAE,IAAI;EAClB,gBAAgB,EAAE,qBAAkB;EACpC,KAAK,EAAE,wBAAwB;CAClC;;;AAzBL,AA2BI,qBA3BiB,CA2BjB,GAAG,CAAC;EACA,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;CACf;;;AA9BL,AAgCI,qBAhCiB,AAgChB,MAAM,CAAC;EACJ,SAAS,EAAE,UAAU;EACrB,OAAO,EAAE,CAAC;CACb;;;AAnCL,AAqCI,qBArCiB,AAqChB,MAAM,CAAE,GAAG,CAAC;EACT,QAAQ,EAAE,QAAQ;CAErB;;;AAIL,AAAA,eAAe,CAAC;EACZ,OAAO,EAAE,IAAI;EACd,SAAS,EAAE,IAAI;EACd,aAAa,EAAE,IAAI;CACtB"
+}

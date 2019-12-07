@@ -1,0 +1,9 @@
+/* line 1, ../project0/sass/utilities/utility_class.scss */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*# sourceMappingURL=utility_class.css.map */

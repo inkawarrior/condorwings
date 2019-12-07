@@ -1,71 +1,61 @@
 {% extends "layout.html" %}
 
+{% block header %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ url_for('static', filename='javascript/slideshow.js') }}"></script>
+    <script src="{{ url_for('static', filename='javascript/tour_details.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tour_details.css') }}">
+
+{% endblock %}
+
 {% block content %}
 
-<div class="tour-slide-show" class="w3-content w3-display-container">
-    {% for image in galley %}
-                <img class="mySlides" src={{ url_for('index') }}{{ image }}>
-    {% endfor %}
-    <!--
-  <img class="mySlides" src="static/images/Moray.jpg">
-  <img class="mySlides" src="static/images/Salineras 3.jpg">
-  <img class="mySlides" src="static/images/DSC_0111.jpg">
-  -->
-  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
-    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
-    {% macro increment(dct, key, inc=1)%}
-        {% if dct.update({key: dct[key] + inc}) %} {% endif %}
-    {% endmacro %}
-    {% set counter = {'counter1':0} %}
-    {% for image in galley %}
-                {{ increment(counter, 'counter1') }}
-                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv({{counter['counter1']}})"></span>
-    {% endfor %}
-  </div>
-</div>
+{% include "slideshow.html" %}
 
 <div class="tour-discription">
     <h3 class="tour-title">{{ tour_name }}</h3>
+    <p><span class="price" data-price=70></span><span class="currency_symbol">PEN</span></p>
 </div>
 
+<div class="currency_form_popup center">
+    <div class="ui-widget">
+        <input id="input" class="currency_form_input center" placeholder="Currency" autofocus type="text">
+    </div>
+    <div id="currency_drop_down">
+
+    </div>
+</div>
+
+{% block booktour %}
 <div class="book-tour">
-
+    <p><span class="price" data-price=50></span><span class="currency_symbol">PEN</span></p>
+    <img id="currency_exchange" src="{{ url_for('static', filename='images/assets/currency_exchange.png') }}" alt=":(">
 </div>
+
+{% endblock %}
+
 
 <script>
-    var intervalID = setInterval(function(){plusDivs(1);}, 5000);
-    var slideIndex = 1;
-    showDivs(slideIndex);
 
-    function plusDivs(n) {
-      showDivs(slideIndex += n);
+    async function set_body_height(){
+        var all_not_footer_elements = document.querySelector(".container-full-page").querySelectorAll("*")
+        var max_height = 0
+        for(var i = 0; i < all_not_footer_elements.length;i++){
+            //console.log(all_not_footer_elements[i])
+            var h = await all_not_footer_elements[i].getBoundingClientRect().bottom + window.scrollY;
+            //console.log(h)
+            if(h > max_height){
+                max_height = h
+            }
+        }
+        //console.log(max_height)
+        max_height = (Math.floor(max_height) + footer_height + footer_margin).toString()+"px"
+        document.querySelector('html').style.height = max_height
+        const body = await document.querySelector('body')
+        body.style.height = max_height
+        document.querySelector('footer').style.position = "absolute"
     }
-
-    function currentDiv(n) {
-      showDivs(slideIndex = n);
-    }
-
-    function showDivs(n) {
-      var i;
-
-      var x = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
-      if (n > x.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = x.length}
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" w3-white", "");
-      }
-      x[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " w3-white";
-      clearInterval(intervalID);
-      intervalID = setInterval(function(){plusDivs(1);}, 5000);
-    }
-
-
 </script>
 
 {% endblock %}

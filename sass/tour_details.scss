@@ -1,0 +1,86 @@
+@import "utilities/variables";
+@import "utilities/utility_class";
+.currency_form_popup {
+    //@extend .center
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 60px;
+    width: 300px;
+    display: none;
+    background-color: $prime-color-greenTR;
+    border: 7px outset $prime-color-greenTR;
+    border-radius: 7px;
+    z-index: 1;
+    //padding-top: 20px;
+    //padding-left: 30px;
+    transform: translate(-50%,-50%);
+}
+
+
+
+#input{
+    height:30px;
+    width:70%;
+}
+
+.ui-menu {
+    z-index: 5;
+}
+
+.currency_form_input {
+    border: 3px inset $prime-color-grayTR;
+}
+
+.currency_form_input, .ui-menu-item {
+    background-color: $prime-color-grayTR;
+    cursor: default;
+}
+
+.ui-state-active{
+    background-color: $prime-color-orange;
+}
+
+.ui-autocomplete span.hl_results {z-index: 5; background-color: $prime-color-grayTR;}
+.ui-autocomplete-loading {} //the object while it's loading (in the event of Ajax, in this case would not need this one
+.ui-autocomplete {
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 5px;
+}
+
+.ui-autocomplete li {font-size: 16px;}
+html .ui-autocomplete {
+    height: 250px;
+}
+
+.tour-discription {
+    position: absolute;
+    width: 60%;
+    height: 600px;
+    margin-left: 30%;
+    margin-top: 7%;
+    margin-bottom: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $prime-color;
+    border-radius: $border-radius;
+    .tour-title {
+
+        font-weight: bold;
+        font-family: fantasy;
+    }
+}
+
+.book-tour {
+    position: absolute;
+    width: 20%;
+    height: 400px;
+    margin-left: 4%;
+    margin-top: 7%;
+    padding-top: 20px;
+    padding-left: 15px;
+    background-color: $prime-color;
+    border-radius: $border-radius;
+}

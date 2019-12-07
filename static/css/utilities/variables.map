@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "variables.css",
+	"sources": [
+		"../../../sass/utilities/variables.scss"
+	],
+	"sourcesContent": [
+		"$sidebar-row-height: 100px;\r\n$sidebar-image-height:150px;\r\n$sidebar-image-width:200px;\r\n$header-height:120px;\r\n$footer-height:150px;\r\n$border-radius:30px;\r\n$prime-color: rgb(21,58,88);\r\n$prime-color-tr: rgba(21,58,88, 0.5);\r\n$prime-color-gray: rgb(80,80,80);\r\n$prime-color-grayTR: rgba(80,80,80, 0.5);\r\n$prime-color-orange: rgb(230, 138, 0);\r\n$prime-color-green:\trgb(0, 77, 0);\r\n$prime-color-greenTR:\trgba(0, 77, 0, 0.5);\r\n"
+	],
+	"names": [],
+	"mappings": ""
+}

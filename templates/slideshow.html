@@ -1,0 +1,38 @@
+<div class="slides-container slide-show">
+    <div class="arrow-right">
+        <div class="arrow-block"></div>
+        <img class="arrow-image" src="{{ url_for('index') }}static/images/assets/arrow_right3.png" alt=":(">
+    </div>
+    <div class="arrow-left">
+        <div class="arrow-block"></div>
+        <img class="arrow-image" src="{{ url_for('index') }}static/images/assets/arrow_right3.png" alt=":(">
+    </div>
+
+    <div class="slide-show-placeholder">
+         <img src={% if placeholder is not undefined %}
+                    {{url_for('index') + placeholder}}
+                {% else %}
+                    {{url_for('index') + galley[0]}}
+                {% endif %}
+                alt=":(" class="placeholder">
+    </div>
+
+
+
+    {% for image in galley %}
+                <div class="slides slides_animation">
+                    <img class="slides-image" data-src={{ url_for('index') + image }}>
+                </div>
+    {% endfor %}
+
+  <div class="slide_jumper_wrapper" style="width:100%">
+    {% macro increment(dct, key, inc=1)%}
+        {% if dct.update({key: dct[key] + inc}) %} {% endif %}
+    {% endmacro %}
+    {% set counter = {'counter1':0} %}
+    {% for image in galley %}
+                {{ increment(counter, 'counter1') }}
+                <span class="slide_jumper" onclick="showDivs({{counter['counter1']}})"></span>
+    {% endfor %}
+  </div>
+</div>
