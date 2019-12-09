@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Learning how to use iframe editor</title>
+        <script src="../static/javascript/iframe_editor.js"></script>
+        <link rel="stylesheet" href="../static/css/iframe_editor.css">
+    </head>
+    <body>
+        <div class="iframe_editor_container">
+            <div class="iframe_tool_bar">
+                <button type="button" name="bold" id="bold"><b>B</b></button>
+                <button type="button" name="italic" id="italic"><i>I</i></button>
+                <button type="button" name="underline" id="underline">_</button>
+                <button type="button" name="orderList" id="orderList">(i)</button>
+                <button type="button" name="unorderList" id="unorderList">&#8226</button>
+                <input type="color" name="text_color" id="text_color">
+                <input type="color" name="background_color" id="background_color">
+                <select name="font_size" id="font_size">
+                    <script type="text/javascript">
+                        for(var i = 1; i < 15; i++){
+                            document.write("<option value='"+ i +"'>"+i+"</option>")
+                        }
+                    </script>
+                </select>
+                <select name="font_family" id="font_family">
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Tahoma">Tahoma</option>
+                </select>
+                <br>
+                <button type="button" name="LinkButton" id="LinkButton" class="wide_button">Link</button>
+                <button type="button" name="unLinkButton" id="unLinkButton" class="wide_button">Unlink</button>
+                <button type="button" name="Undo" id="Undo">U</button>
+                <button type="button" name="Redo" id="Redo">R</button>
+                <button type="button" name="SaveAs" id="SaveAs">Save As</button>
+                <button type="button" name="load" id="load">Load</button>
+            </div>
+            <div id="iframe_wrapper">
+                <iframe id="iframe_editor" class="iframe_editor" name="iframe_editor">
+
+                </iframe>
+            </div>
+        </div>
+    </body>
+</html>

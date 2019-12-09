@@ -59,8 +59,14 @@
         width: 100%;
         height: 100%;
     }
+    @media screen and (max-width: $break-small ){
+        display: none;
+    }
 }
 
+.slideshow_button {
+    display: none;
+}
 
 .arrow-right {
     @extend .arrow;
@@ -139,14 +145,14 @@
     display:inline-block;
     border-radius: 50%;
     background-color: rgba(0,0,0,0);
-    border: 3px outset $prime-color-tr;
+    border: 3px outset $prime-color-TR;
     &:hover {
-        background-color: $prime-color-tr;
+        background-color: $prime-color-TR;
     }
 }
 
 .slide_jumper_selected {
-    background-color: $prime-color-tr;
+    background-color: $prime-color-TR;
 }
 
 .slide_jumper_wrapper {
@@ -154,6 +160,9 @@
     bottom:10px;
     text-align: center;
     position: absolute;
+    @media screen and (max-width: $break-small ){
+        display: none;
+    }
 }
 
 @keyframes slide_left_out {

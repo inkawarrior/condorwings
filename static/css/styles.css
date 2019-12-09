@@ -1,3 +1,4 @@
+@use "sass:color";
 /* line 3, ../project0/sass/styles.scss */
 * {
   margin: 0;
@@ -58,10 +59,10 @@ header {
   height: 120px;
   z-index: 10;
   /*background: rgb(45, 107, 45);*/
-  background-color: #153a58;
+  background-image: linear-gradient(80deg, rgba(21, 58, 88, 0.5), rgba(44, 122, 185, 0.5));
 }
 
-/* line 57, ../project0/sass/styles.scss */
+/* line 61, ../project0/sass/styles.scss */
 header .logo {
   position: absolute;
   left: 10px;
@@ -70,7 +71,7 @@ header .logo {
   height: 100%;
 }
 
-/* line 64, ../project0/sass/styles.scss */
+/* line 68, ../project0/sass/styles.scss */
 header .nav-bar {
   position: absolute;
   bottom: 0;
@@ -78,7 +79,7 @@ header .nav-bar {
   height: 45%;
 }
 
-/* line 70, ../project0/sass/styles.scss */
+/* line 74, ../project0/sass/styles.scss */
 header a {
   margin-bottom: 0;
   float: right;
@@ -89,13 +90,63 @@ header a {
   text-decoration: none;
 }
 
-/* line 79, ../project0/sass/styles.scss */
+@media screen and (min-width: 621px) and (max-width: 920px) {
+  /* line 74, ../project0/sass/styles.scss */
+  header a {
+    padding: 0px 10px;
+  }
+}
+
+/* line 86, ../project0/sass/styles.scss */
 header a:hover {
   background: #ddd;
   color: black;
 }
 
-/* line 86, ../project0/sass/styles.scss */
+@media screen and (min-width: 621px) and (max-width: 920px) {
+  /* line 45, ../project0/sass/styles.scss */
+  header {
+    height: 15vmin;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  /* line 45, ../project0/sass/styles.scss */
+  header {
+    height: 10vw;
+    font-size: 8vw;
+  }
+  /* line 97, ../project0/sass/styles.scss */
+  header .logo {
+    height: 10vw;
+    position: relative;
+  }
+  /* line 102, ../project0/sass/styles.scss */
+  header .nav-bar {
+    position: relative;
+    height: 100%;
+  }
+  /* line 106, ../project0/sass/styles.scss */
+  header a {
+    position: relative;
+    bottom: 0;
+    height: 10vw;
+    padding: 0 7px;
+  }
+  /* line 112, ../project0/sass/styles.scss */
+  header #home_link {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* line 45, ../project0/sass/styles.scss */
+  header {
+    height: auto;
+  }
+}
+
+/* line 122, ../project0/sass/styles.scss */
 footer {
   z-index: 0;
   bottom: 0;
@@ -109,12 +160,12 @@ footer {
   font-size: 18px;
 }
 
-/* line 97, ../project0/sass/styles.scss */
+/* line 134, ../project0/sass/styles.scss */
 footer img {
   filter: brightness(70%);
 }
 
-/* line 100, ../project0/sass/styles.scss */
+/* line 137, ../project0/sass/styles.scss */
 footer .footer-email {
   position: absolute;
   top: 20px;
@@ -122,20 +173,27 @@ footer .footer-email {
   bottom: 0;
 }
 
-/* line 109, ../project0/sass/styles.scss */
+@media screen and (max-width: 920px) {
+  /* line 137, ../project0/sass/styles.scss */
+  footer .footer-email {
+    left: 5%;
+  }
+}
+
+/* line 149, ../project0/sass/styles.scss */
 footer .social-media-icons {
   width: 48px;
   height: 48px;
 }
 
-/* line 114, ../project0/sass/styles.scss */
+/* line 153, ../project0/sass/styles.scss */
 footer .tripadvisor-icon {
   width: 72px;
   height: 48px;
   filter: brightness(60%);
 }
 
-/* line 119, ../project0/sass/styles.scss */
+/* line 158, ../project0/sass/styles.scss */
 footer .footer-social-media {
   position: absolute;
   right: 20%;
@@ -143,17 +201,65 @@ footer .footer-social-media {
   top: 20px;
 }
 
-/* line 126, ../project0/sass/styles.scss */
+@media screen and (max-width: 920px) {
+  /* line 158, ../project0/sass/styles.scss */
+  footer .footer-social-media {
+    right: 5%;
+  }
+}
+
+/* line 168, ../project0/sass/styles.scss */
 footer .footer-social-media a {
   color: white;
 }
 
-/* line 131, ../project0/sass/styles.scss */
+/* line 173, ../project0/sass/styles.scss */
 footer .footer-social-media img:hover {
   filter: brightness(40%);
 }
 
-/* line 138, ../project0/sass/styles.scss */
+@media screen and (max-width: 620px) {
+  /* line 122, ../project0/sass/styles.scss */
+  footer {
+    font-size: 13px;
+    text-align: center;
+  }
+  /* line 182, ../project0/sass/styles.scss */
+  footer .social-media-icons {
+    width: 24px;
+    height: 24px;
+  }
+  /* line 186, ../project0/sass/styles.scss */
+  footer .tripadvisor-icon {
+    width: 36px;
+    height: 24px;
+  }
+  /* line 190, ../project0/sass/styles.scss */
+  footer .footer-email, footer .footer-social-media {
+    position: relative;
+  }
+}
+
+/* line 196, ../project0/sass/styles.scss */
+button {
+  padding: 3px;
+  border: none;
+}
+
+/* line 199, ../project0/sass/styles.scss */
+button:focus {
+  outline: 0;
+}
+
+/* line 204, ../project0/sass/styles.scss */
+table {
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* line 211, ../project0/sass/styles.scss */
 .info-bar {
   width: 100%;
   height: 20px;
@@ -161,7 +267,7 @@ footer .footer-social-media img:hover {
   font-size: 15px;
 }
 
-/* line 145, ../project0/sass/styles.scss */
+/* line 218, ../project0/sass/styles.scss */
 .banner:before {
   /*
     content: "Experience Peru with Condor Wings Travel!";
@@ -172,7 +278,7 @@ footer .footer-social-media img:hover {
   font-size: 6vmin;
 }
 
-/* line 155, ../project0/sass/styles.scss */
+/* line 228, ../project0/sass/styles.scss */
 .container-full-page {
   position: relative;
   text-align: left;
@@ -189,78 +295,71 @@ footer .footer-social-media img:hover {
     */
 }
 
-/* line 172, ../project0/sass/styles.scss */
+@media screen and (max-width: 620px) {
+  /* line 228, ../project0/sass/styles.scss */
+  .container-full-page {
+    top: 15vw;
+  }
+}
+
+/* line 248, ../project0/sass/styles.scss */
 .container {
   width: 100%;
   height: 100%;
 }
 
-/* line 175, ../project0/sass/styles.scss */
+/* line 251, ../project0/sass/styles.scss */
 .container .row {
   margin: 30px;
   margin-left: 110px;
 }
 
-/* line 178, ../project0/sass/styles.scss */
+/* line 254, ../project0/sass/styles.scss */
 .container .row div {
   width: 100%;
   margin: 10px;
 }
 
-/* line 181, ../project0/sass/styles.scss */
+/* line 257, ../project0/sass/styles.scss */
 .container .row div input {
   width: 100%;
 }
 
-/* line 189, ../project0/sass/styles.scss */
-.content, #tour-images {
-  position: relative;
-  width: 68%;
-  height: 95%;
-  top: 5%;
-  left: 16%;
-}
-
-/* line 197, ../project0/sass/styles.scss */
-#tour-images {
-  width: 84%;
-}
-
-/* line 203, ../project0/sass/styles.scss */
+/* line 270, ../project0/sass/styles.scss */
 ol {
   list-style: none;
   padding-left: 0;
 }
 
-/* line 208, ../project0/sass/styles.scss */
+/* line 275, ../project0/sass/styles.scss */
 ul {
   list-style: none;
 }
 
-/* line 212, ../project0/sass/styles.scss */
+/* line 279, ../project0/sass/styles.scss */
 a {
   text-decoration: none;
   color: black;
 }
 
-/* line 218, ../project0/sass/styles.scss */
+/* line 285, ../project0/sass/styles.scss */
 #contact {
   text-align: center;
 }
 
-/* line 220, ../project0/sass/styles.scss */
+/* line 287, ../project0/sass/styles.scss */
 #contact a {
   font-weight: bold;
 }
 
-/* line 222, ../project0/sass/styles.scss */
+/* line 289, ../project0/sass/styles.scss */
 #contact a:hover {
   font-size: 30px;
   font-weight: bold;
   color: red;
 }
 
-/* line 230, ../project0/sass/styles.scss */
+/* line 297, ../project0/sass/styles.scss */
 #bootstrap-overrides-home body {
   background: black;
   font-family: monospace;
@@ -268,7 +367,7 @@ a {
   box-sizing: inherit;
 }
 
-/* line 237, ../project0/sass/styles.scss */
+/* line 304, ../project0/sass/styles.scss */
 #tour-drop-down {
   background-color: transparent;
   background-image: url("../images/assets/rocks-3989777_1920.png");
@@ -282,7 +381,58 @@ a {
   font-size: 4vmin;
 }
 
-/* line 251, ../project0/sass/styles.scss */
+/* line 318, ../project0/sass/styles.scss */
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  z-index: 3;
+}
+
+/* line 325, ../project0/sass/styles.scss */
+#edit_tool_bar {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  bottom: 0px;
+  padding-top: 10px;
+  background-image: linear-gradient(80deg, #804000, #e68a00, #ffa51f);
+  padding-left: 10px;
+}
+
+/* line 335, ../project0/sass/styles.scss */
+#edit_tool_bar button {
+  border: none;
+  background-color: transparent;
+  transition: all 0.3s linear 0s;
+  border-radius: 2px;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* line 344, ../project0/sass/styles.scss */
+#edit_tool_bar button:hover {
+  background-color: #603000;
+}
+
+/* line 349, ../project0/sass/styles.scss */
+#edit_tool_bar input[type="color"] {
+  background: transparent;
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 30px;
+}
+
+/* line 357, ../project0/sass/styles.scss */
+#edit_tool_bar img {
+  width: 32px;
+  height: 32px;
+}
+
+/* line 364, ../project0/sass/styles.scss */
 .block_slider_container {
   position: relative;
   width: 100%;
@@ -290,7 +440,7 @@ a {
   margin-top: 30px;
 }
 
-/* line 259, ../project0/sass/styles.scss */
+/* line 372, ../project0/sass/styles.scss */
 .block_slider {
   cursor: grab;
   padding-left: 780px;
@@ -303,7 +453,7 @@ a {
   overflow: hidden;
 }
 
-/* line 273, ../project0/sass/styles.scss */
+/* line 386, ../project0/sass/styles.scss */
 .block_slider .block {
   user-select: none;
   float: left;
@@ -315,7 +465,7 @@ a {
   margin: 20px;
 }
 
-/* line 287, ../project0/sass/styles.scss */
+/* line 400, ../project0/sass/styles.scss */
 .clearfix:after {
   content: ".";
   display: block;
@@ -324,7 +474,7 @@ a {
   visibility: hidden;
 }
 
-/* line 295, ../project0/sass/styles.scss */
+/* line 408, ../project0/sass/styles.scss */
 .block_container_filter {
   position: absolute;
   width: 100%;
@@ -333,26 +483,44 @@ a {
   pointer-events: none;
 }
 
-/* line 303, ../project0/sass/styles.scss */
+/* line 416, ../project0/sass/styles.scss */
 #block_left_filter {
   position: absolute;
   left: 0;
+  top: 0;
 }
 
-/* line 308, ../project0/sass/styles.scss */
+@media screen and (min-width: 621px) and (max-width: 920px) {
+  /* line 416, ../project0/sass/styles.scss */
+  #block_left_filter {
+    width: 30%;
+    height: 100%;
+  }
+}
+
+/* line 426, ../project0/sass/styles.scss */
 #block_right_filter {
   position: absolute;
   right: 0;
+  top: 0;
 }
 
-/* line 314, ../project0/sass/styles.scss */
+@media screen and (min-width: 621px) and (max-width: 920px) {
+  /* line 426, ../project0/sass/styles.scss */
+  #block_right_filter {
+    width: 30%;
+    height: 100%;
+  }
+}
+
+/* line 437, ../project0/sass/styles.scss */
 #message-box {
   text-align: left;
   width: 100%;
   height: 200px;
 }
 
-/* line 320, ../project0/sass/styles.scss */
+/* line 443, ../project0/sass/styles.scss */
 #send-button {
   width: 100%;
   background-color: #2d6b2d;

@@ -1,3 +1,62 @@
+@use "sass:color";
+@use "sass:color";
+/* line 3, ../project0/sass/utilities/utility_class.scss */
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* line 10, ../project0/sass/utilities/utility_class.scss */
+.popup {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  background-color: rgba(0, 77, 0, 0.5);
+  border: 7px outset rgba(0, 77, 0, 0.5);
+  border-radius: 7px;
+  z-index: 1;
+  color: #e68a00;
+}
+
+/* line 22, ../project0/sass/utilities/utility_class.scss */
+.popup input[type="text"], .popup input[type="password"] {
+  background-color: #505050;
+  border: 2px inset #e68a00;
+}
+
+/* line 26, ../project0/sass/utilities/utility_class.scss */
+.popup button, .popup input[type="submit"] {
+  font-size: 18px;
+  background-image: linear-gradient(50deg, #153a58, #246599, #505050);
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+/* line 36, ../project0/sass/utilities/utility_class.scss */
+.content, #tour-images {
+  position: relative;
+  width: 68%;
+  height: 95%;
+  top: 5%;
+  left: 16%;
+}
+
+@media screen and (max-width: 620px) {
+  /* line 36, ../project0/sass/utilities/utility_class.scss */
+  .content, #tour-images {
+    width: 100%;
+    margin: 0;
+    left: 0;
+    top: 2%;
+  }
+}
+
 /* line 4, ../project0/sass/styles_tour_index.scss */
 .tour-division {
   width: 100%;
@@ -57,7 +116,43 @@
   position: absolute;
 }
 
-/* line 58, ../project0/sass/styles_tour_index.scss */
+@media screen and (max-width: 620px) {
+  /* line 14, ../project0/sass/styles_tour_index.scss */
+  .tour-image-container {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    border-radius: 0;
+    height: 90vw;
+  }
+  /* line 60, ../project0/sass/styles_tour_index.scss */
+  .tour-image-container:hover {
+    transform: none;
+    z-index: 5;
+  }
+  /* line 64, ../project0/sass/styles_tour_index.scss */
+  .tour-image-container div {
+    height: 15%;
+    bottom: 0;
+    font-size: 11vw;
+  }
+}
+
+/* line 74, ../project0/sass/styles_tour_index.scss */
+#tour-images {
+  width: 84%;
+}
+
+@media screen and (max-width: 620px) {
+  /* line 74, ../project0/sass/styles_tour_index.scss */
+  #tour-images {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+/* line 84, ../project0/sass/styles_tour_index.scss */
 .flex-container {
   position: relative;
   display: flex;

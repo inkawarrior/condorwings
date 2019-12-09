@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", ()=>{
+    var editor_mod = localStorage.getItem('editor')
+    if(editor_mod){
+        document.getElementById("edit_tool_bar").style.display = "block";
+    }
+})
+
+/*
 document.addEventListener('DOMContentLoaded', ()=>{
     var header = document.querySelector('header');
     var style=window.getComputedStyle(header,"");
@@ -7,7 +15,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     //console.log(rgb);
     header.style.backgroundColor = rgba(rgb[0],rgb[1],rgb[2], 0.5);
 });
-
+*/
 function from_rgb(str){
     color=str.substring(str.indexOf('(')+1, str.indexOf(')'));
     rgbColors=color.split(',', 3);

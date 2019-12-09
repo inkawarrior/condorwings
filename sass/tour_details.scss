@@ -1,23 +1,22 @@
 @import "utilities/variables";
 @import "utilities/utility_class";
+@use "sass:color";
+$background-for-text: linear-gradient(50deg, $prime-color, $prime-color, scale-color($prime-color, $lightness: 20%), $prime-color-green);
+
 .currency_form_popup {
-    //@extend .center
-    position: fixed;
-    top: 50%;
-    left: 50%;
+    @extend .popup;
     height: 60px;
     width: 300px;
-    display: none;
-    background-color: $prime-color-greenTR;
-    border: 7px outset $prime-color-greenTR;
-    border-radius: 7px;
-    z-index: 1;
+    text-align: left;
     //padding-top: 20px;
     //padding-left: 30px;
-    transform: translate(-50%,-50%);
 }
 
-
+.start_edit {
+    background-image: $button-color2;
+    border: 2px outset scale-color($prime-color-orange, $lightness: -20%);
+    border-radius: 4px;
+}
 
 #input{
     height:30px;
@@ -60,17 +59,86 @@ html .ui-autocomplete {
     width: 60%;
     height: 600px;
     margin-left: 30%;
-    margin-top: 7%;
+    margin-top: 30px;
     margin-bottom: 10%;
-    padding-left: 20px;
-    padding-right: 20px;
-    background-color: $prime-color;
-    border-radius: $border-radius;
+    background-color: transparent;
     .tour-title {
 
         font-weight: bold;
         font-family: fantasy;
     }
+
+    @media screen and (max-width: $break-small ){
+        position: relative;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.top_tab_bar {
+    position: absolute;
+    width: 80%;
+    height: 40px;
+    padding: 0;
+    margin-left: $border-radius*2;
+    background-color: transparent;
+    button.tab_selected:before {
+        filter:brightness(100%);
+        transition: .4s ease-in-out;
+        border-radius: 15px 15px 0 0;
+    }
+    button {
+
+        position: relative;
+        font-size: 15px;
+        padding-left: 4px;
+        padding-right: 4px;
+        float: left;
+        border-radius: 15px 15px 0 0;
+        height: 100%;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        background-color: transparent;
+        top: 0;
+        overflow: hidden;
+        &:before {
+            transition: .4s ease-in-out;
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            filter:brightness(50%);
+            background-image: $background-for-text;
+            border-radius: 15px 15px 0 0;
+            border-bottom: 2px inset scale-color($prime-color, $lightness: -10%);
+
+        }
+    }
+}
+
+.background_image_holder {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: $background-for-text;
+    border-radius: $border-radius;
+}
+
+.tab_container {
+    animation: left_top_zoom 0.5s;
+    display: none;
+
+}
+
+.tab_content {
+
 }
 
 .book-tour {
@@ -78,9 +146,27 @@ html .ui-autocomplete {
     width: 20%;
     height: 400px;
     margin-left: 4%;
-    margin-top: 7%;
+    margin-top: 70px;
     padding-top: 20px;
     padding-left: 15px;
-    background-color: $prime-color;
+    background-image: $background-for-text;
     border-radius: $border-radius;
+    @media screen and (max-width: $break-small ){
+        position: relative;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@keyframes left_top_zoom {
+    0% {
+        left:-100%;
+        top: -100%;
+        transform: scale(0);
+    }
+    100% {
+        left:0;
+        top: 0;
+        transform: scale(1);
+    }
 }

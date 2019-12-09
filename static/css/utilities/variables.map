@@ -2,11 +2,13 @@
 	"version": 3,
 	"file": "variables.css",
 	"sources": [
-		"../../../sass/utilities/variables.scss"
+		"../../../sass/utilities/variables.scss",
+		"../../../sass/utilities/import.scss"
 	],
 	"sourcesContent": [
-		"$sidebar-row-height: 100px;\r\n$sidebar-image-height:150px;\r\n$sidebar-image-width:200px;\r\n$header-height:120px;\r\n$footer-height:150px;\r\n$border-radius:30px;\r\n$prime-color: rgb(21,58,88);\r\n$prime-color-tr: rgba(21,58,88, 0.5);\r\n$prime-color-gray: rgb(80,80,80);\r\n$prime-color-grayTR: rgba(80,80,80, 0.5);\r\n$prime-color-orange: rgb(230, 138, 0);\r\n$prime-color-green:\trgb(0, 77, 0);\r\n$prime-color-greenTR:\trgba(0, 77, 0, 0.5);\r\n"
+		"@import \"import\";\r\n$sidebar-row-height: 100px;\r\n$sidebar-image-height:150px;\r\n$sidebar-image-width:200px;\r\n$header-height:120px;\r\n$footer-height:150px;\r\n$border-radius:30px;\r\n$prime-color: rgb(21,58,88);\r\n$prime-color-TR: rgba($prime-color, 0.5);//rgba(21,58,88, 0.5);\r\n$prime-color-gray: rgb(80,80,80);\r\n$prime-color-grayTR: rgba($prime-color-gray, 0.5);//rgba(80,80,80, 0.5);\r\n$prime-color-orange: rgb(230, 138, 0);\r\n$prime-color-green:\trgb(0, 77, 0);\r\n$prime-color-greenTR:\trgba($prime-color-green, 0.5);//rgba(0, 77, 0, 0.5);\r\n$button-color: linear-gradient(50deg, $prime-color, scale-color($prime-color, $lightness: 20%), $prime-color-gray);\r\n$button-color2:linear-gradient(50deg, $prime-color-orange, scale-color($prime-color-orange, $lightness: 20%), $prime-color-orange);\r\n$break-small: 620px;\r\n$break-large: 920px;\r\n$icon-size: 48px;\r\n",
+		"@use \"sass:color\";\r\n"
 	],
 	"names": [],
-	"mappings": ""
+	"mappings": "ACAA,IAAI,CAAJ,YAAI"
 }

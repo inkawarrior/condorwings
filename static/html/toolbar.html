@@ -1,0 +1,35 @@
+<div id="edit_tool_bar" name="edit_tool_bar">
+    <button type="button" name="bold" id="bold"><b>B</b></button>
+    <button type="button" name="italic" id="italic"><i>I</i></button>
+    <button type="button" name="underline" id="underline">_</button>
+    <button type="button" name="orderList" id="orderList">(i)</button>
+    <button type="button" name="unorderList" id="unorderList">&#8226</button>
+    <input type="color" name="text_color" id="text_color">
+    <input type="color" name="background_color" id="background_color">
+    <select name="font_size" id="font_size" value="5">
+        <script type="text/javascript">
+            for(var i = 1; i < 15; i++){
+                document.write("<option value='"+ i +"'>"+i+"</option>")
+            }
+        </script>
+    </select>
+    <select name="font_family" id="font_family">
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Tahoma">Tahoma</option>
+    </select>
+    <img src="{{ url_for('static', filename='images/assets/toolbar/link.png') }}" name="LinkButton" id="LinkButton">
+    <img src="{{ url_for('static', filename='images/assets/toolbar/unlink.png') }}" name="unLinkButton" id="unLinkButton">
+    <img src="{{ url_for('static', filename='images/assets/toolbar/undo.png') }}" name="Undo" id="Undo">
+    <img src="{{ url_for('static', filename='images/assets/toolbar/redo.png') }}" name="Redo" id="Redo">
+    <img src="{{ url_for('static', filename='images/assets/toolbar/save.png') }}" name="SaveAs" id="SaveAs">
+    <img src="{{ url_for('static', filename='images/assets/toolbar/upload (2).png') }}" name="load" id="load">
+    <!--
+    <button type="button" name="LinkButton" id="LinkButton" class="wide_button">Link</button>
+    <button type="button" name="unLinkButton" id="unLinkButton" class="wide_button">Unlink</button>
+
+    <button type="button" name="Undo" id="Undo">U</button>
+    <button type="button" name="Redo" id="Redo">R</button>
+    <button type="button" name="SaveAs" id="SaveAs">Save As</button>
+    <button type="button" name="load" id="load">Load</button>
+    -->
+<div>

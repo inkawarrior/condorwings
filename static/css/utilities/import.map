@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "import.css",
+	"sources": [
+		"../../../sass/utilities/import.scss"
+	],
+	"sourcesContent": [
+		"@use \"sass:color\";\r\n"
+	],
+	"names": [],
+	"mappings": "AAAA,IAAI,CAAJ,YAAI"
+}

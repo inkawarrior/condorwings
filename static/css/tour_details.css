@@ -1,4 +1,6 @@
-/* line 1, ../project0/sass/utilities/utility_class.scss */
+@use "sass:color";
+@use "sass:color";
+/* line 3, ../project0/sass/utilities/utility_class.scss */
 .center {
   position: absolute;
   top: 50%;
@@ -6,55 +8,104 @@
   transform: translate(-50%, -50%);
 }
 
-/* line 3, ../project0/sass/tour_details.scss */
-.currency_form_popup {
+/* line 10, ../project0/sass/utilities/utility_class.scss */
+.popup, .currency_form_popup {
+  text-align: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  height: 60px;
-  width: 300px;
+  transform: translate(-50%, -50%);
   display: none;
   background-color: rgba(0, 77, 0, 0.5);
   border: 7px outset rgba(0, 77, 0, 0.5);
   border-radius: 7px;
   z-index: 1;
-  transform: translate(-50%, -50%);
+  color: #e68a00;
 }
 
-/* line 22, ../project0/sass/tour_details.scss */
+/* line 22, ../project0/sass/utilities/utility_class.scss */
+.popup input[type="text"], .currency_form_popup input[type="text"], .popup input[type="password"], .currency_form_popup input[type="password"] {
+  background-color: #505050;
+  border: 2px inset #e68a00;
+}
+
+/* line 26, ../project0/sass/utilities/utility_class.scss */
+.popup button, .currency_form_popup button, .popup input[type="submit"], .currency_form_popup input[type="submit"] {
+  font-size: 18px;
+  background-image: linear-gradient(50deg, #153a58, #246599, #505050);
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+/* line 36, ../project0/sass/utilities/utility_class.scss */
+.content {
+  position: relative;
+  width: 68%;
+  height: 95%;
+  top: 5%;
+  left: 16%;
+}
+
+@media screen and (max-width: 620px) {
+  /* line 36, ../project0/sass/utilities/utility_class.scss */
+  .content {
+    width: 100%;
+    margin: 0;
+    left: 0;
+    top: 2%;
+  }
+}
+
+@use "sass:color";
+/* line 6, ../project0/sass/tour_details.scss */
+.currency_form_popup {
+  height: 60px;
+  width: 300px;
+  text-align: left;
+}
+
+/* line 15, ../project0/sass/tour_details.scss */
+.start_edit {
+  background-image: linear-gradient(50deg, #e68a00, #ffa51f, #e68a00);
+  border: 2px outset #b86e00;
+  border-radius: 4px;
+}
+
+/* line 21, ../project0/sass/tour_details.scss */
 #input {
   height: 30px;
   width: 70%;
 }
 
-/* line 27, ../project0/sass/tour_details.scss */
+/* line 26, ../project0/sass/tour_details.scss */
 .ui-menu {
   z-index: 5;
 }
 
-/* line 31, ../project0/sass/tour_details.scss */
+/* line 30, ../project0/sass/tour_details.scss */
 .currency_form_input {
   border: 3px inset rgba(80, 80, 80, 0.5);
 }
 
-/* line 35, ../project0/sass/tour_details.scss */
+/* line 34, ../project0/sass/tour_details.scss */
 .currency_form_input, .ui-menu-item {
   background-color: rgba(80, 80, 80, 0.5);
   cursor: default;
 }
 
-/* line 40, ../project0/sass/tour_details.scss */
+/* line 39, ../project0/sass/tour_details.scss */
 .ui-state-active {
   background-color: #e68a00;
 }
 
-/* line 44, ../project0/sass/tour_details.scss */
+/* line 43, ../project0/sass/tour_details.scss */
 .ui-autocomplete span.hl_results {
   z-index: 5;
   background-color: rgba(80, 80, 80, 0.5);
 }
 
-/* line 46, ../project0/sass/tour_details.scss */
+/* line 45, ../project0/sass/tour_details.scss */
 .ui-autocomplete {
   max-height: 250px;
   overflow-y: auto;
@@ -62,47 +113,143 @@
   padding-right: 5px;
 }
 
-/* line 53, ../project0/sass/tour_details.scss */
+/* line 52, ../project0/sass/tour_details.scss */
 .ui-autocomplete li {
   font-size: 16px;
 }
 
-/* line 54, ../project0/sass/tour_details.scss */
+/* line 53, ../project0/sass/tour_details.scss */
 html .ui-autocomplete {
   height: 250px;
 }
 
-/* line 58, ../project0/sass/tour_details.scss */
+/* line 57, ../project0/sass/tour_details.scss */
 .tour-discription {
   position: absolute;
   width: 60%;
   height: 600px;
   margin-left: 30%;
-  margin-top: 7%;
+  margin-top: 30px;
   margin-bottom: 10%;
-  padding-left: 20px;
-  padding-right: 20px;
-  background-color: #153a58;
-  border-radius: 30px;
+  background-color: transparent;
 }
 
-/* line 69, ../project0/sass/tour_details.scss */
+/* line 65, ../project0/sass/tour_details.scss */
 .tour-discription .tour-title {
   font-weight: bold;
   font-family: fantasy;
 }
 
-/* line 76, ../project0/sass/tour_details.scss */
+@media screen and (max-width: 620px) {
+  /* line 57, ../project0/sass/tour_details.scss */
+  .tour-discription {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* line 78, ../project0/sass/tour_details.scss */
+.top_tab_bar {
+  position: absolute;
+  width: 80%;
+  height: 40px;
+  padding: 0;
+  margin-left: 60px;
+  background-color: transparent;
+}
+
+/* line 85, ../project0/sass/tour_details.scss */
+.top_tab_bar button.tab_selected:before {
+  filter: brightness(100%);
+  transition: .4s ease-in-out;
+  border-radius: 15px 15px 0 0;
+}
+
+/* line 90, ../project0/sass/tour_details.scss */
+.top_tab_bar button {
+  position: relative;
+  font-size: 15px;
+  padding-left: 4px;
+  padding-right: 4px;
+  float: left;
+  border-radius: 15px 15px 0 0;
+  height: 100%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: transparent;
+  top: 0;
+  overflow: hidden;
+}
+
+/* line 105, ../project0/sass/tour_details.scss */
+.top_tab_bar button:before {
+  transition: .4s ease-in-out;
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(50%);
+  background-image: linear-gradient(50deg, #153a58, #153a58, #246599, #004d00);
+  border-radius: 15px 15px 0 0;
+  border-bottom: 2px inset #13344f;
+}
+
+/* line 123, ../project0/sass/tour_details.scss */
+.background_image_holder {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-image: linear-gradient(50deg, #153a58, #153a58, #246599, #004d00);
+  border-radius: 30px;
+}
+
+/* line 134, ../project0/sass/tour_details.scss */
+.tab_container {
+  animation: left_top_zoom 0.5s;
+  display: none;
+}
+
+/* line 144, ../project0/sass/tour_details.scss */
 .book-tour {
   position: absolute;
   width: 20%;
   height: 400px;
   margin-left: 4%;
-  margin-top: 7%;
+  margin-top: 70px;
   padding-top: 20px;
   padding-left: 15px;
-  background-color: #153a58;
+  background-image: linear-gradient(50deg, #153a58, #153a58, #246599, #004d00);
   border-radius: 30px;
+}
+
+@media screen and (max-width: 620px) {
+  /* line 144, ../project0/sass/tour_details.scss */
+  .book-tour {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+@keyframes left_top_zoom {
+  0% {
+    left: -100%;
+    top: -100%;
+    transform: scale(0);
+  }
+  100% {
+    left: 0;
+    top: 0;
+    transform: scale(1);
+  }
 }
 
 /*# sourceMappingURL=tour_details.css.map */

@@ -1,9 +1,9 @@
 <div class="slides-container slide-show">
-    <div class="arrow-right">
+    <div class="arrow-right arrow slideshow_button">
         <div class="arrow-block"></div>
         <img class="arrow-image" src="{{ url_for('index') }}static/images/assets/arrow_right3.png" alt=":(">
     </div>
-    <div class="arrow-left">
+    <div class="arrow-left arrow slideshow_button">
         <div class="arrow-block"></div>
         <img class="arrow-image" src="{{ url_for('index') }}static/images/assets/arrow_right3.png" alt=":(">
     </div>
@@ -25,7 +25,7 @@
                 </div>
     {% endfor %}
 
-  <div class="slide_jumper_wrapper" style="width:100%">
+  <div class="slide_jumper_wrapper slideshow_button" style="width:100%">
     {% macro increment(dct, key, inc=1)%}
         {% if dct.update({key: dct[key] + inc}) %} {% endif %}
     {% endmacro %}

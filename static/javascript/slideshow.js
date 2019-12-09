@@ -5,6 +5,9 @@ var slide_fade_in_progress = false;
 var slide_auto_ellipse = 10000;
 var next_animation = undefined;
 var slide_direction = true;
+var last_win_Yoffset = undefined;
+var slide_click_x = undefined;
+
 /*
 window.onload = () => {
     const slide_container = document.querySelector("slides-container");
@@ -18,8 +21,48 @@ document.addEventListener('DOMContentLoaded',() => {
     document.getElementsByClassName("arrow-left")[0].onclick = slide
     //load_deffered_images();
 
-
 });
+
+function drag_slide(){
+    //console.log("Test0")
+    var slide_click_x = event.pageX
+    event.preventDefault();
+    window.addEventListener("mouseup", function end_drag_slide(e){
+        //console.log("Test1")
+        var slide_mouseup_x = e.pageX
+        //console.log(slide_mouseup_x - slide_click_x )
+        if(slide_mouseup_x - slide_click_x > 50){
+            slide(false)
+        }else if (slide_mouseup_x - slide_click_x < -50) {
+            slide(true)
+        }
+        window.removeEventListener("mouseup",end_drag_slide)
+    })
+}
+
+function addjust_arrowY(){
+    const deltaY = window.pageYOffset - last_win_Yoffset
+    last_win_Yoffset = window.pageYOffset
+    const arrow = document.querySelector(".arrow")
+    const slideshowY = document.querySelector(".slides-container").getBoundingClientRect().bottom;
+    const slideshow_height = slideshowY + window.pageYOffset
+    const arrow_style = window.getComputedStyle(arrow)
+    var arrow_top = arrow_style.getPropertyValue('top')
+    arrow_top = parseInt(arrow_top.substring(0,arrow_top.indexOf("p")))
+    if(arrow_top + arrow_height > slideshowY+window.pageYOffset){
+        document.querySelectorAll(".arrow").forEach(arrow=>{
+            arrow.style.top = (slideshowY+window.pageYOffset - arrow_height).toString() + "px"
+        })
+    }else if(arrow_top + deltaY < arrow_top_min){
+        document.querySelectorAll(".arrow").forEach(arrow=>{
+            arrow.style.top = "arrow_top_min".toString() +"px"
+        })
+    }else if(window.pageYOffset <= arrow_top - arrow_top_min || deltaY > 0){
+        document.querySelectorAll(".arrow").forEach(arrow=>{
+            arrow.style.top = (deltaY + arrow_top).toString() + "px"
+        })
+    }
+}
 
 function slide(left = slide_direction){
     return new Promise((resolve, reject) =>{
@@ -143,7 +186,16 @@ function load_deffered_images(){
         slide_fade_in_progress = true
         update_slide_jumper(0)
         fades_in(placeholder, first_image, ()=>{
-            intervalID = setInterval(slide, slide_auto_ellipse);
+            if(document.querySelectorAll('.slides_animation').length > 1){
+                intervalID = setInterval(slide, slide_auto_ellipse);
+                document.querySelectorAll('.slideshow_button').forEach(button =>{
+                    button.style.display = "block"
+                })
+                last_win_Yoffset = window.pageYOffset
+                document.addEventListener("scroll", addjust_arrowY)
+                document.getElementsByClassName("slides-container")[0].onmousedown = drag_slide
+            }
+
             slide_fade_in_progress = false
         });
 

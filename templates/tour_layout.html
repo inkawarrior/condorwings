@@ -3,10 +3,25 @@
 {% block header %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="{{ url_for('static', filename='javascript/iframe_editor.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/slideshow.js') }}"></script>
     <script src="{{ url_for('static', filename='javascript/tour_details.js') }}"></script>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/tour_details.css') }}">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+    <script id="edit" type="text/x-handlebars-template">
+        <div class="edit_switch">
+
+            <button class="start">Edit</button>
+        </div>
+    </script>
+    <!--
+    {% raw -%}
+        {{ contents }}
+    {%- endraw %}
+    -->
 {% endblock %}
 
 {% block content %}
@@ -14,8 +29,24 @@
 {% include "slideshow.html" %}
 
 <div class="tour-discription">
-    <h3 class="tour-title">{{ tour_name }}</h3>
-    <p><span class="price" data-price=70></span><span class="currency_symbol">PEN</span></p>
+
+    <div class="top_tab_bar">
+        {% for tab in tabs%}
+            <button type="button" name={{tab[1]}} id={{tab[1]}} value={{tab[1]}} class="tab_button">{{tab[0]}}</button>
+        {% endfor %}
+    </div>
+    <div class="background_image_holder">
+    {% for tab in tabs%}
+        <div class="tab_container {{tab[1]}}">
+            <iframe class="tab_content" name="tour_discription_frame" id="tour_discription_frame" src="{{ url_for('static', filename=tab[2]) }}" >
+                <!--
+                <h3 class="tour-title">{{ tour_name }}</h3>
+                <p><span class="price" data-price=70></span><span class="currency_symbol">PEN</span></p>
+                -->
+            </iframe>
+        </div>
+    {% endfor %}
+    </div>
 </div>
 
 <div class="currency_form_popup center">
@@ -23,7 +54,6 @@
         <input id="input" class="currency_form_input center" placeholder="Currency" autofocus type="text">
     </div>
     <div id="currency_drop_down">
-
     </div>
 </div>
 
@@ -31,6 +61,9 @@
 <div class="book-tour">
     <p><span class="price" data-price=50></span><span class="currency_symbol">PEN</span></p>
     <img id="currency_exchange" src="{{ url_for('static', filename='images/assets/currency_exchange.png') }}" alt=":(">
+    <iframe name="tour_discription_frame" id="tour_discription_frame" src="{{ tour_book }}" >
+
+    </iframe>
 </div>
 
 {% endblock %}

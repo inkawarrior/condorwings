@@ -1,0 +1,44 @@
+body {
+    background-color: white;
+}
+
+.iframe_editor {
+    height: 400px;
+    width: 600px;
+    background-color: white;
+}
+.iframe_editor_container {
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    transform: translateX(-50%);
+    background-color: rgb(128, 64, 0);
+    overflow: hidden;
+    border-radius: 40px 40px 20px 20px;
+}
+
+.iframe_tool_bar {
+    height: 60px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+button {
+    border:none;
+    background-color: transparent;
+    transition: all 0.3s linear 0s;
+    border-radius: 2px;
+    font-size: 25px;
+    text-align: center;
+}
+
+button:hover {
+    background-color: rgb(96, 48, 0);
+
+}
+
+input[type="color"] {
+    background: transparent;
+    border: none;
+    outline: none;
+}

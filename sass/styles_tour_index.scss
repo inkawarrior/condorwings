@@ -1,5 +1,5 @@
 @import "utilities/variables";
-
+@import "utilities/utility_class";
 
 .tour-division {
     width: 100%;
@@ -51,6 +51,32 @@
     &:hover  img {
         position: absolute;
 
+    }
+    @media screen and (max-width: $break-small ){
+        width: 100%;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0;
+        &:hover {
+            transform: none;
+            z-index: 5;
+        }
+        div{
+            height: 15%;
+            bottom: 0;
+            font-size: 11vw;
+        }
+        border-radius:0;
+        height: 90vw;
+    }
+}
+
+#tour-images {
+    @extend .content;
+    width: 84%;
+    @media screen and (max-width: $break-small ){
+        width: 100%;
+        margin: 0;
     }
 }
 

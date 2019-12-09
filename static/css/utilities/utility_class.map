@@ -2,11 +2,15 @@
 	"version": 3,
 	"file": "utility_class.css",
 	"sources": [
-		"../../../sass/utilities/utility_class.scss"
+		"../../../sass/utilities/utility_class.scss",
+		"../../../sass/utilities/variables.scss",
+		"../../../sass/utilities/import.scss"
 	],
 	"sourcesContent": [
-		".center {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%,-50%);\r\n}\r\n"
+		"@import \"variables\";\r\n\r\n.center {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%,-50%);\r\n}\r\n\r\n.popup {\r\n    text-align: center;\r\n    position: fixed;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%,-50%);\r\n    display: none;\r\n    background-color: $prime-color-greenTR;\r\n    border: 7px outset $prime-color-greenTR;\r\n    border-radius: 7px;\r\n    z-index: 1;\r\n    color: $prime-color-orange;\r\n    input[type=\"text\"], input[type=\"password\"]  {\r\n        background-color: $prime-color-gray;\r\n        border: 2px inset $prime-color-orange;\r\n    }\r\n    button, input[type=\"submit\"] {\r\n        font-size: 18px;\r\n        background-image: $button-color;\r\n        border: none;\r\n        border-radius: 5px;\r\n        padding: 3px;\r\n    }\r\n}\r\n\r\n\r\n.content {\r\n    position: relative;\r\n    width: 68%;\r\n    height: 95%;\r\n    top: 5%;\r\n    left: 16%;\r\n    @media screen and (max-width: $break-small ){\r\n        width: 100%;\r\n        margin: 0;\r\n        left:0;\r\n        top: 2%;\r\n    }\r\n}\r\n",
+		"@import \"import\";\r\n$sidebar-row-height: 100px;\r\n$sidebar-image-height:150px;\r\n$sidebar-image-width:200px;\r\n$header-height:120px;\r\n$footer-height:150px;\r\n$border-radius:30px;\r\n$prime-color: rgb(21,58,88);\r\n$prime-color-TR: rgba($prime-color, 0.5);//rgba(21,58,88, 0.5);\r\n$prime-color-gray: rgb(80,80,80);\r\n$prime-color-grayTR: rgba($prime-color-gray, 0.5);//rgba(80,80,80, 0.5);\r\n$prime-color-orange: rgb(230, 138, 0);\r\n$prime-color-green:\trgb(0, 77, 0);\r\n$prime-color-greenTR:\trgba($prime-color-green, 0.5);//rgba(0, 77, 0, 0.5);\r\n$button-color: linear-gradient(50deg, $prime-color, scale-color($prime-color, $lightness: 20%), $prime-color-gray);\r\n$button-color2:linear-gradient(50deg, $prime-color-orange, scale-color($prime-color-orange, $lightness: 20%), $prime-color-orange);\r\n$break-small: 620px;\r\n$break-large: 920px;\r\n$icon-size: 48px;\r\n",
+		"@use \"sass:color\";\r\n"
 	],
 	"names": [],
-	"mappings": ";AAAA,AAAA,OAAO,CAAC;EACJ,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAoB;CAClC"
+	"mappings": "AEAA,IAAI,CAAJ,YAAI;;AFEJ,AAAA,OAAO,CAAC;EACJ,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAoB;CAClC;;;AAED,AAAA,MAAM,CAAC;EACH,UAAU,EAAE,MAAM;EAClB,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,GAAG;EACR,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,qBAAoB;EAC/B,OAAO,EAAE,IAAI;EACb,gBAAgB,ECJA,mBAAa;EDK7B,MAAM,EAAE,GAAG,CAAC,MAAM,CCLF,mBAAa;EDM7B,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,CAAC;EACV,KAAK,ECTY,OAAgB;CDqBpC;;;AAvBD,AAYI,MAZE,CAYF,KAAK,CAAA,AAAA,IAAC,CAAK,MAAM,AAAX,GAZV,MAAM,CAYkB,KAAK,CAAA,AAAA,IAAC,CAAK,UAAU,AAAf,EAAkB;EACxC,gBAAgB,ECbL,OAAa;EDcxB,MAAM,EAAE,GAAG,CAAC,KAAK,CCZJ,OAAgB;CDahC;;;AAfL,AAgBI,MAhBE,CAgBF,MAAM,EAhBV,MAAM,CAgBM,KAAK,CAAA,AAAA,IAAC,CAAK,QAAQ,AAAb,EAAe;EACzB,SAAS,EAAE,IAAI;EACf,gBAAgB,ECbT,iDAAmG;EDc1G,MAAM,EAAE,IAAI;EACZ,aAAa,EAAE,GAAG;EAClB,OAAO,EAAE,GAAG;CACf;;;AAIL,AAAA,QAAQ,CAAC;EACL,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;EACX,GAAG,EAAE,EAAE;EACP,IAAI,EAAE,GAAG;CAOZ;;AANG,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;;EANvC,AAAA,QAAQ,CAAC;IAOD,KAAK,EAAE,IAAI;IACX,MAAM,EAAE,CAAC;IACT,IAAI,EAAC,CAAC;IACN,GAAG,EAAE,EAAE;GAEd"
 }
